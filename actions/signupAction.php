@@ -3,7 +3,7 @@
 session_start();
 
 // Connexion à la base de données
-require('database.php');
+require('../includes/database.php');
 
 // Validation du formulaire
 if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['nomUtilisateur']) && isset($_POST['prenomUtilisateur']) && isset($_POST['ageUtilisateur'])) {

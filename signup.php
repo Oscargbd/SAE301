@@ -1,8 +1,3 @@
-<?php
-// Inclut le fichier d'inscription : signupAction.php
-require('actions/signupAction.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
