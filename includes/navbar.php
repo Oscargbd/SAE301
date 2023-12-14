@@ -8,10 +8,10 @@
     <a href="resultats.php">Resultats</a>
 
     <?php if (isset($_SESSION["pseudo"])) {     // Si l'utilisateur est connecté, il a accès à son compte, sinon il y a un bouton d'inscription
-                    echo "<a href='compte.php'>Compte</a>";
-            } else {
-                echo "<a href='signup.php'>S'inscrire</a>";
-            }
+      echo "<a href='compte.php'>Compte</a>";
+    } else {
+      echo "<a href='signup.php'>S'inscrire</a>";
+    }
     ?>
 
   </div>
