@@ -28,7 +28,7 @@
             <br>
             <button type="submit">S'inscrire</button>
         </form>
-        <p>Vous avez déjà un compte ?<a href="/sign-up">Connectez vous</a></p>
+        <p>Vous avez déjà un compte ?<a href="login.php">Connectez-vous</a></p>
         <div class="errorMSG">
             <?php
             if (isset($_SESSION['errorMSG'])) {
