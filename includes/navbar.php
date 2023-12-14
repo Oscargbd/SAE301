@@ -6,7 +6,14 @@
       <img src="images/logocdf-blanc2.0.png" alt="LogoCoupeDeFranceBlanc" class="logo-blanc">
     </a>
     <a href="resultats.php">Resultats</a>
-    <a href="compte.php">Compte</a>
+
+    <?php if (isset($_SESSION["pseudo"])) {     // Si l'utilisateur est connecté, il a accès à son compte, sinon il y a un bouton d'inscription
+                    echo "<a href='compte.php'>Compte</a>";
+            } else {
+                echo "<a href='signup.php'>S'inscrire</a>";
+            }
+    ?>
+
   </div>
   <div class="theme">
     <a href="#">
