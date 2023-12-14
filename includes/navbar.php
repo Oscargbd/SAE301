@@ -11,8 +11,7 @@
       echo "<a href='compte.php'>Compte</a>";
     } else {
       echo "<a href='signup.php'>S'inscrire</a>";
-    }
-    ?>
+    } ?>
 
   </div>
   <div class="theme">
