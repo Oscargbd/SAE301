@@ -1,5 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <?php include('includes/head.php') ?>
 
@@ -23,16 +24,17 @@
             <input type="text" id="prenomUtilisateur" name="prenomUtilisateur" placeholder="Votre prénom" required>
             <br>
             <label for="ageUtilisateur">Âge</label>
-            <input type="text" id="ageUtilisateur" name="ageUtilisateur" placeholder="Votre âge" required>
+            <input type="text" id="ageUtilisateur" name="ageUtilisateur" placeholder="Votre âge" >
             <br>
             <button type="submit">S'inscrire</button>
         </form>
         <p>Vous avez déjà un compte ?<a href="/sign-up">Connectez vous</a></p>
-        <div class="errorMSG"> <!-- Message d'erreur  -->
+        <div class="errorMSG">
             <?php
-            if (isset($errorMSG)) {
-                echo '<p>' . $errorMSG . '</p>';
-            };
+            if (isset($_SESSION['errorMSG'])) {
+                echo '<p>' . $_SESSION['errorMSG'] . '</p>';
+                unset($_SESSION['errorMSG']); // Pour effacer le message après l'avoir affiché
+            }
             ?>
         </div>
         <div class="divider">

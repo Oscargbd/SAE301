@@ -7,5 +7,5 @@ $hote="localhost";
 $port="";
 $nomBD="sae301";
 $identifiant="root";
-$pass="root";
+$pass="";
 ?>
