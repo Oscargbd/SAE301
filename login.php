@@ -5,6 +5,7 @@
 <?php include('includes/head.php') ?>
 
 <body class="bodylogin">
+    <h1 class="titrelogin">Le <br> Trail des <br> glaces.</h1>
     <div class="login-form">
         <h2>Connectez-vous !</h2>
         <form action="actions/loginAction.php" method="post">
