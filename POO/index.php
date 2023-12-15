@@ -28,7 +28,26 @@ echo $personne->getPersonne() . "<br>";
 */
 
 // Requête pour récupérer les données de Trail
-$requeteTrail = $bdd->query("SELECT * FROM Trail");
+$requeteTrail = $bdd->query("SELECT * FROM Trail"); ?>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style_poo.css">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<?php
+
+// affiche contenue trail TEST TEST fonctionnement
 
 while ($donneesTrail = $requeteTrail->fetch()) {
     $trail = new Trail($donneesTrail['id'], $donneesTrail['nom'], $donneesTrail['distance'], $donneesTrail['heureDepart']);
@@ -37,9 +56,11 @@ while ($donneesTrail = $requeteTrail->fetch()) {
 
 
 
+// Affiche img de parcours en fonction de l'id
 
-// Requête pour récupérer la première ligne de la table Parcours
-$requeteParcours = $bdd->query("SELECT * FROM Parcours LIMIT 1");
+$parcoursId = 1; 
+$requeteParcours = $bdd->prepare("SELECT * FROM Parcours WHERE id = :id");
+$requeteParcours->execute(['id' => $parcoursId]);
 
 if ($donneesParcours = $requeteParcours->fetch()) {
     $parcours = new Parcours($donneesParcours['id'], $donneesParcours['description'], $donneesParcours['pointsDePassage'], $donneesParcours['cheminImage']);
@@ -49,6 +70,5 @@ if ($donneesParcours = $requeteParcours->fetch()) {
         echo "<img src='" . htmlspecialchars($parcours->cheminImage) . "' alt='Image du parcours'><br>";
     }
 }
-
 
 ?>
