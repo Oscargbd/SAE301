@@ -24,11 +24,26 @@ h2{
 
 /* page login.php */
 
+
+
+.bodylogin {
+    background: url('../img/fondLogin.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.login-container {
+    display: flex;
+    justify-content: flex-end; 
+    height: 100vh; 
+}
+
 .login-form {
     font-size: 15px;
     width: 375px;
-    margin: 0 auto;
-    text-align: left; 
+    text-align: left;
+    margin-top: 50px;
+    margin-left: auto; 
+    margin-right: 7%;
 }
 
 label {
@@ -38,27 +53,34 @@ label {
 
 input {
     padding-left: 5px;
-    font-family: lufga; 
-    height: 42px; 
-    width: 325px;
-    border-radius: 8px 8px 8px 8px;
+    font-family: lufga;
+    height: 42px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
     margin-bottom: 20px;
     margin-top: 5px;
     border-color: black;
 }
 
-button{
-    font-family: lufga; 
-    height: 42px; 
-    width: 325px;
-    border-radius: 8px 8px 8px 8px;
+button {
+    font-family: lufga;
+    height: 42px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
     background-color: black;
     color: white;
     margin-top: 5px;
 }
 
-.divider{
-    margin: 0 auto;
-    text-align: left;    
-}
 
+@media (max-width: 768px) {
+    .login-container {
+        justify-content: center; 
+    }
+
+    .login-form {
+        margin-left: auto; 
+    }
+}

@@ -4,7 +4,7 @@
 
 <?php include('includes/head.php') ?>
 
-<body>
+<body class="bodylogin">
     <div class="login-form">
         <h2>Connectez-vous !</h2>
         <form action="actions/loginAction.php" method="post">
