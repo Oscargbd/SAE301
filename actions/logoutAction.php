@@ -5,5 +5,5 @@ $_SESSION = [];
 // Destruction de la session 
 session_destroy();
 // Redirection vers la page login.php
-header('Location: ../login.php');
+header('Location: ../index.php');
 ?>
