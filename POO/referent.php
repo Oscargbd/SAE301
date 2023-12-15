@@ -13,7 +13,7 @@ class Referent  {
 
     // Méthode pour obtenir les informations de contact
     public function getContactInfo() {
-        return "ID: " . $this->id . ", Nom: " . $this->nom . ", Contact: " . $this->contact;
+        return "ID: de referent " . $this->id . ", Nom: " . $this->nom . ", Contact: " . $this->contact;
     }
 
     // Méthode pour mettre à jour les informations de contact

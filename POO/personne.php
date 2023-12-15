@@ -1,7 +1,5 @@
 <?php
 
-include("referent.php");
-
 class Personne extends Referent {
     private $prenom;
     private $role;
@@ -23,7 +21,7 @@ class Personne extends Referent {
 
     // Méthodes spécifiques à Personne
     public function getPersonne() {
-        return "ID: " . $this->getId() . ", Nom: " . $this->getNom() . ", Prénom: " . $this->prenom . ", Rôle: " . $this->role;
+        return "ID de personne: " . $this->getId() . ", Nom: " . $this->getNom() . ", Prénom: " . $this->prenom . ", Rôle: " . $this->role;
     }
 }
 

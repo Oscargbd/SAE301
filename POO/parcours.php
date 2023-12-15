@@ -3,10 +3,12 @@ class Parcours {
     public $id;
     public $description;
     public $pointsDePassage;
+    public $cheminImage;
 
     // Constructeur
-    public function __construct($id, $description, $pointsDePassage) {
+    public function __construct($id, $description, $pointsDePassage, $cheminImage) {
         $this->id = $id;
+        $this->cheminImage = $cheminImage; // Initialisation de l'attribut
         $this->description = $description;
         $this->pointsDePassage = $pointsDePassage;
     }
@@ -16,7 +18,7 @@ class Parcours {
 
     // Méthode pour obtenir les détails du parcours
     public function getParcoursDetails() {
-        return "ID: " . $this->id . ", Description: " . $this->description . ", Points de passage: " . $this->pointsDePassage;
+        return "ID: de parcours" . $this->id . ", Description: " . $this->description . ", Points de passage: " . $this->pointsDePassage;
     }
 
     // Méthode pour mettre à jour les détails du parcours

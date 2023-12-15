@@ -49,7 +49,7 @@ class Trail {
 
     // Méthode pour obtenir les détails du trail
     public function getDetails() {
-        return "ID: " . $this->id . ", Nom: " . $this->nom . ", Distance: " . $this->distance . " km, Heure de départ: " . $this->heureDepart;
+        return "ID: de trail" . $this->id . ", Nom: " . $this->nom . ", Distance: " . $this->distance . " km, Heure de départ: " . $this->heureDepart;
     }
 
     // Méthode pour mettre à jour les détails du trail
