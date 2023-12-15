@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,6 +8,10 @@ session_start();
 </head>
 <body>
     <?php
+
+include ('includes/navbar.php');
+
+
     if (isset($_SESSION["username"])) {
     echo $_SESSION["username"]."
     

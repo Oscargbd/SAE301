@@ -1,9 +1,5 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <?php
     include('includes/head.php');
