@@ -1,10 +1,13 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <?php include('includes/head.php') ?>
 
-<body>
+<body class="bodylogin">
+    <?php
+    include('includes/navbar.php');
+    ?>
+    <h1 class="titrelogin">Le <br> Trail des <br> glaces.</h1>
     <div class="login-form">
         <h2>Connectez-vous !</h2>
         <form action="actions/loginAction.php" method="post">
@@ -24,12 +27,6 @@
                 unset($_SESSION['errorMSG']); // Pour effacer le message après l'avoir affiché
             }
             ?>
-        </div>
-        <div class="divider">
-            <span>Ou</span>
-        </div>
-        <div class="google-login">
-            <button type="button">Se connecter avec Google</button>
         </div>
     </div>
 </body>
