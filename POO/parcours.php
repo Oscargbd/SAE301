@@ -13,6 +13,10 @@ class Parcours {
         $this->pointsDePassage = $pointsDePassage;
     }
 
+    public function getCheminImage() {
+        return $this->cheminImage;
+    }
+
     // Méthode pour obtenir les détails du parcours
     public function getParcoursDetails() {
         return "ID: de parcours" . $this->id . ", Description: " . $this->description . ", Points de passage: " . $this->pointsDePassage;
