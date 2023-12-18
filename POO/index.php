@@ -55,20 +55,43 @@ while ($donneesTrail = $requeteTrail->fetch()) {
 }
 
 
+/* ----------------------------------------- 
+Article 1
+----------------------------------------- */ 
 
 // Affiche img de parcours en fonction de l'id
-
-$parcoursId = 1; 
+$Id = 1; 
 $requeteParcours = $bdd->prepare("SELECT * FROM Parcours WHERE id = :id");
-$requeteParcours->execute(['id' => $parcoursId]);
+$requeteParcours->execute(['id' => $Id]);
 
 if ($donneesParcours = $requeteParcours->fetch()) {
     $parcours = new Parcours($donneesParcours['id'], $donneesParcours['description'], $donneesParcours['pointsDePassage'], $donneesParcours['cheminImage']);
 
-    // Afficher uniquement l'image
     if (!empty($parcours->cheminImage)) {
         echo "<img src='" . htmlspecialchars($parcours->cheminImage) . "' alt='Image du parcours'><br>";
     }
+}
+
+// Affiche le nom de trail
+$requeteTrail = $bdd->prepare("SELECT * FROM Trail WHERE id = :id");
+$requeteTrail->execute(['id' => $Id]);
+
+if ($donneesTrail = $requeteTrail->fetch()) {
+    $trail = new Trail($donneesTrail['id'], $donneesTrail['nom'], $donneesTrail['distance'], $donneesTrail['heureDepart']);
+    echo "<div>" . htmlspecialchars($trail->getNom()) . "</div>";
+    echo "<div>Distance: " . htmlspecialchars($trail->getDistance()) . " km</div>";
+    echo "<div>Heure de départ: " . htmlspecialchars($trail->getHeureDepart()) . "</div>";
+}
+
+// Requête pour récupérer le référent avec un ID spécifique
+$requeteReferent = $bdd->prepare("SELECT * FROM Referent WHERE id = :id");
+$requeteReferent->execute(['id' => $Id]);
+
+if ($donneesReferent = $requeteReferent->fetch()) {
+    $referent = new Referent($donneesReferent['id'], $donneesReferent['nom'], $donneesReferent['contact']);
+
+    echo "<div>Nom: " . htmlspecialchars($referent->getNom()) . "</div>";
+    echo "<div>Contact: " . htmlspecialchars($referent->getContact()) . "</div>";
 }
 
 ?>

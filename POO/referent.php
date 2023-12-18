@@ -16,6 +16,16 @@ class Referent  {
         return "ID: de referent " . $this->id . ", Nom: " . $this->nom . ", Contact: " . $this->contact;
     }
 
+        // Méthode pour obtenir le nom
+        public function getNom() {
+            return $this->nom;
+        }
+    
+        // Méthode pour obtenir le contact
+        public function getContact() {
+            return $this->contact;
+        }
+
     // Méthode pour mettre à jour les informations de contact
     public function updateContactInfo($nom, $contact) {
         $this->nom = $nom;
