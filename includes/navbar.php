@@ -8,7 +8,7 @@ require('includes/database.php');
 ?>
 <nav>
     <a href="index.php" class="iconeRond">
-      <img src="./images/logoTDG.png" alt="LogoTrailDesGlaces">
+      <img src="./images/logoblanc.png" alt="LogoTrailDesGlaces">
     </a>
     <a href="index.php">Accueil</a>
     <a href="#">Parcours</a>
