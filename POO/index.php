@@ -45,25 +45,34 @@ while ($donnees = $requete->fetch()) {
 </head>
 
 <body>
+    <div class="contenaire_poo">
+        <?php foreach ($trails as $trail) : ?>
+            <div class="block_poo">
+                <!-- Afficher l'image du parcours -->
+                <div>
+                    <img src="<?= htmlspecialchars($trail->getParcours()->getCheminImage()); ?>" alt="Image du parcours">
+                </div>
+                <div class="txt">
+                    <!-- Afficher les informations du trail -->
+                    <div><?php htmlspecialchars($trail->getNom()); ?></div>
+                    <div>
+                        <p>Distance: <?= htmlspecialchars($trail->getDistance()); ?> km</p>
+                    </div>
+                    <div>
+                        <p>Heure de départ: <?= htmlspecialchars($trail->getHeureDepart()); ?></p>
+                    </div>
 
-    <?php
-
-    foreach ($trails as $trail) {
-        // Afficher l'image du parcours
-        echo "<img src='" . htmlspecialchars($trail->getParcours()->getCheminImage()) . "' alt='Image du parcours'><br>";
-
-        // Afficher les informations du trail
-        echo "<div>" . htmlspecialchars($trail->getNom()) . "</div>";
-        echo "<div>Distance: " . htmlspecialchars($trail->getDistance()) . " km</div>";
-        echo "<div>Heure de départ: " . htmlspecialchars($trail->getHeureDepart()) . "</div>";
-
-        // Afficher les informations du référent
-        echo "<div>Nom: " . htmlspecialchars($trail->getReferent()->getNom()) . "</div>";
-        echo "<div>Contact: " . htmlspecialchars($trail->getReferent()->getContact()) . "</div>";
-    }
-
-    ?>
-
+                    <!-- Afficher les informations du référent -->
+                    <div>
+                        <p>Nom: <?= htmlspecialchars($trail->getReferent()->getNom()); ?></p>
+                    </div>
+                    <div>
+                        <p>Contact: <?= htmlspecialchars($trail->getReferent()->getContact()); ?></p>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </body>
 
 </html>
