@@ -11,8 +11,8 @@ require('includes/database.php');
       <img src="./images/logoblanc.png" alt="LogoTrailDesGlaces">
     </a>
     <a href="index.php">Accueil</a>
-    <a href="#">Parcours</a>
-    <a href="#">Billetterie</a>
+    <a href="parcours.php">Parcours</a>
+    <a href="billetterie.php">Billetterie</a>
     <div class="grow"></div>
     <a class="iconeRond"><img src="./images/union.png" alt="icone search bar" class="loupe"></a>
     <a href="faq.php">FAQ</a>
