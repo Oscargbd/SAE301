@@ -19,7 +19,7 @@
             <br>
             <button type="submit">Se connecter</button>
         </form>
-        <p>Vous n'avez pas de compte ?<a href="signup.php"> Inscrivez vous</a></p>
+        <p>Vous n'avez pas de compte ? <a href="signup.php">Inscrivez vous</a></p>
         <div class="errorMSG">
             <?php
             if (isset($_SESSION['errorMSG'])) {
