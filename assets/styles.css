@@ -24,7 +24,7 @@ body{
 nav {
     display: flex;
     background-color: none;
-    width: 98vw;
+    
     padding: 1vw;
 }
 
@@ -163,11 +163,13 @@ button {
 /* page d'accueil */
 
 
+ .div-principale{
+    position: relative;
+ }
 
  .bodyindex {
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 header {
@@ -219,6 +221,7 @@ header {
     bottom: 20px;
     width: 240px;
     height: 60px;
+    right: 30px;
     border: 2px solid #000;
     background-color: white;
     color: #000;

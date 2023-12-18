@@ -7,7 +7,12 @@
     <?php
     include('includes/navbar.php');
     ?>
-    <div class="login-form">
+    <main class='pageLogin'>
+        <div>
+            <img src="img/fondLoginPng.png">
+            <h1 class="titrelogin">Le<br> Trail des<br> glaces</h1>
+        </div>
+        <div class="login-form">
         <h2>Inscrivez vous !</h2>
         <form action="actions/signupaction.php" method="post">
             <label for="username">Nom d'utilisateur</label>
@@ -30,7 +35,7 @@
             <br>
             <button type="submit">S'inscrire</button>
         </form>
-        <p>Vous avez déjà un compte ?<a href="login.php"> Connectez-vous</a></p>
+        <p>Vous avez déjà un compte ? <a href="login.php">Connectez-vous</a></p>
         <div class="errorMSG">
             <?php
             if (isset($_SESSION['errorMSG'])) {
@@ -40,6 +45,8 @@
             ?>
         </div>
     </div>
+    </main>
+    
 </body>
 
 </html>

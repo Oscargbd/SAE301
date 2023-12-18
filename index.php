@@ -16,7 +16,7 @@
     </header>
     
     
-    <div>
+    <div class="div-principale">
         <div class="background-image">
         <img src="images/flocon.png" alt="">
         <div class="centered-text">
