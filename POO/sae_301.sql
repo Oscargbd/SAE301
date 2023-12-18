@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 15 déc. 2023 à 10:02
+-- Généré le : lun. 18 déc. 2023 à 11:00
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -41,7 +41,7 @@ CREATE TABLE `parcours` (
 
 INSERT INTO `parcours` (`id`, `trail_id`, `description`, `pointsDePassage`, `cheminImage`) VALUES
 (1, 1, 'Parcours montagneux difficile', 5, 'img/trail.jpg'),
-(2, 2, 'Parcours long avec vue sur le Mont Blanc', 8, 'images/parcours2.jpg'),
+(2, 2, 'Parcours long avec vue sur le Mont Blanc', 8, 'img/trail2.jpg'),
 (3, 3, 'Parcours familial dans la vallée', 3, 'images/parcours3.jpg');
 
 -- --------------------------------------------------------
