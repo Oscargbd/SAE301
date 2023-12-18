@@ -15,7 +15,7 @@ require('includes/database.php');
     <a href="#">Billeterie</a>
     <div class="grow"></div>
     <a class="iconeRond"><img src="./images/union.png" alt="icone search bar" class="loupe"></a>
-    <a href="#">FAQ</a>
+    <a href="faq.php">FAQ</a>
     <?php if (isset($_SESSION["username"])) {     // Si l'utilisateur est connecté, il a accès à son compte, sinon il y a un bouton d'inscription
       echo "<a href='compte.php'>Compte</a>";
     } else {
