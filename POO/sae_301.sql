@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 18 déc. 2023 à 11:00
+-- Généré le : lun. 18 déc. 2023 à 15:05
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -30,8 +30,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `parcours` (
   `id` int(11) NOT NULL,
   `trail_id` int(11) DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `pointsDePassage` int(11) DEFAULT NULL,
   `cheminImage` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -39,10 +37,11 @@ CREATE TABLE `parcours` (
 -- Déchargement des données de la table `parcours`
 --
 
-INSERT INTO `parcours` (`id`, `trail_id`, `description`, `pointsDePassage`, `cheminImage`) VALUES
-(1, 1, 'Parcours montagneux difficile', 5, 'img/trail.jpg'),
-(2, 2, 'Parcours long avec vue sur le Mont Blanc', 8, 'img/trail2.jpg'),
-(3, 3, 'Parcours familial dans la vallée', 3, 'images/parcours3.jpg');
+INSERT INTO `parcours` (`id`, `trail_id`, `cheminImage`) VALUES
+(1, 1, 'img/trail.jpg'),
+(2, 2, 'img/trail2.jpg'),
+(3, 3, 'img/trail.jpg'),
+(4, 4, 'img/trail2.jpg');
 
 -- --------------------------------------------------------
 
@@ -64,7 +63,8 @@ CREATE TABLE `personne` (
 INSERT INTO `personne` (`id`, `referent_id`, `prenom`, `role`) VALUES
 (1, 1, 'Marc', 'Organisateur'),
 (2, 2, 'Léa', 'Coordinatrice'),
-(3, 3, 'Thomas', 'Securité');
+(3, 3, 'Thomas', 'Securité'),
+(4, 4, 'Romain montes', 'dépistage');
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,8 @@ CREATE TABLE `referent` (
 INSERT INTO `referent` (`id`, `nom`, `contact`) VALUES
 (1, 'John Doe', 'john.doe@example.com'),
 (2, 'Jane Smith', 'jane.smith@example.com'),
-(3, 'Alex Martin', 'alex.martin@example.com');
+(3, 'Alex Martin', 'alex.martin@example.com'),
+(4, 'Montes Romain', 'romontes@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,8 @@ CREATE TABLE `trail` (
 INSERT INTO `trail` (`id`, `nom`, `distance`, `heureDepart`) VALUES
 (1, 'Trail des Alpes', 100, '08:00'),
 (2, 'Trail du Mont Blanc', 170, '06:30'),
-(3, 'Trail de la Vallée', 50, '09:00');
+(3, 'Trail de la Vallée', 50, '09:00'),
+(4, 'trail des glaces ', 10, '18h30');
 
 --
 -- Index pour les tables déchargées
@@ -147,25 +149,25 @@ ALTER TABLE `trail`
 -- AUTO_INCREMENT pour la table `parcours`
 --
 ALTER TABLE `parcours`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `personne`
 --
 ALTER TABLE `personne`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `referent`
 --
 ALTER TABLE `referent`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `trail`
 --
 ALTER TABLE `trail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
