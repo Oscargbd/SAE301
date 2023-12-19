@@ -141,9 +141,9 @@ CREATE TABLE `trail` (
 
 INSERT INTO `trail` (`id`, `nom`, `distance`, `heureDepart`) VALUES
 (1, 'Marche Polaire', 5, '17:00'),
-(2, 'Trail des pingouin', 10, '18:00'),
+(2, 'Trail des Husky', 10, '18:00'),
 (3, 'Trail des alpinistes', 15, '18:30'),
-(4, 'Trail des loup', 20, '19:00');
+(4, 'Trail des loups', 20, '19:00');
 
 -- --------------------------------------------------------
 
