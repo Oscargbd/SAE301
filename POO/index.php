@@ -41,6 +41,7 @@ while ($donnees = $requete->fetch()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style_poo.css">
+    <link rel="stylesheet" href="styles.css">
     <title>POO | SAE 301</title>
 </head>
 
@@ -50,11 +51,11 @@ while ($donnees = $requete->fetch()) {
             <div class="block_poo">
                 <!-- Afficher l'image du parcours -->
                 <div>
-                    <img src="<?= htmlspecialchars($trail->getParcours()->getCheminImage()); ?>" alt="Image du parcours">
+                    <img class="img-poo" src="<?= htmlspecialchars($trail->getParcours()->getCheminImage()); ?>" alt="Image du parcours">
                 </div>
-                <div class="txt">
+                <div class="txt-poo">
                     <!-- Afficher les informations du trail -->
-                    <div><?php htmlspecialchars($trail->getNom()); ?></div>
+                    <div><?= htmlspecialchars($trail->getNom()); ?></div>
                     <div>
                         <p>Distance: <?= htmlspecialchars($trail->getDistance()); ?> km</p>
                     </div>
@@ -69,6 +70,11 @@ while ($donnees = $requete->fetch()) {
                     <div>
                         <p>Contact: <?= htmlspecialchars($trail->getReferent()->getContact()); ?></p>
                     </div>
+                </div>
+                <div class="btn_poo">
+                    <a href="parcours.php">
+                        <input type="button" value="achat">
+                    </a>
                 </div>
             </div>
         <?php endforeach; ?>

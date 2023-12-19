@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 18 déc. 2023 à 15:05
+-- Généré le : mar. 19 déc. 2023 à 09:11
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -40,31 +40,8 @@ CREATE TABLE `parcours` (
 INSERT INTO `parcours` (`id`, `trail_id`, `cheminImage`) VALUES
 (1, 1, 'img/trail.jpg'),
 (2, 2, 'img/trail2.jpg'),
-(3, 3, 'img/trail.jpg'),
-(4, 4, 'img/trail2.jpg');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `personne`
---
-
-CREATE TABLE `personne` (
-  `id` int(11) NOT NULL,
-  `referent_id` int(11) DEFAULT NULL,
-  `prenom` varchar(255) DEFAULT NULL,
-  `role` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `personne`
---
-
-INSERT INTO `personne` (`id`, `referent_id`, `prenom`, `role`) VALUES
-(1, 1, 'Marc', 'Organisateur'),
-(2, 2, 'Léa', 'Coordinatrice'),
-(3, 3, 'Thomas', 'Securité'),
-(4, 4, 'Romain montes', 'dépistage');
+(3, 3, 'img/trail3.jpg'),
+(4, 4, 'img/trail4.jpg');
 
 -- --------------------------------------------------------
 
@@ -83,10 +60,10 @@ CREATE TABLE `referent` (
 --
 
 INSERT INTO `referent` (`id`, `nom`, `contact`) VALUES
-(1, 'John Doe', 'john.doe@example.com'),
-(2, 'Jane Smith', 'jane.smith@example.com'),
-(3, 'Alex Martin', 'alex.martin@example.com'),
-(4, 'Montes Romain', 'romontes@gmail.com');
+(1, 'Guibaud Oscar', 'guibaud.oscar@contact.fr'),
+(2, 'Riveti Melenn', 'riveti.melenn@contact.fr'),
+(3, 'Veclain Clément', 'veclain.clement@contact.fr'),
+(4, 'Montes Romain', 'romain.montes55@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -106,10 +83,10 @@ CREATE TABLE `trail` (
 --
 
 INSERT INTO `trail` (`id`, `nom`, `distance`, `heureDepart`) VALUES
-(1, 'Trail des Alpes', 100, '08:00'),
-(2, 'Trail du Mont Blanc', 170, '06:30'),
-(3, 'Trail de la Vallée', 50, '09:00'),
-(4, 'trail des glaces ', 10, '18h30');
+(1, 'Marche Polaire', 5, '17:00'),
+(2, 'Trail des pingouin', 10, '18:00'),
+(3, 'Trail des alpinistes', 15, '18:30'),
+(4, 'Trail des loup', 20, '19:00');
 
 --
 -- Index pour les tables déchargées
@@ -121,13 +98,6 @@ INSERT INTO `trail` (`id`, `nom`, `distance`, `heureDepart`) VALUES
 ALTER TABLE `parcours`
   ADD PRIMARY KEY (`id`),
   ADD KEY `trail_id` (`trail_id`);
-
---
--- Index pour la table `personne`
---
-ALTER TABLE `personne`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `referent_id` (`referent_id`);
 
 --
 -- Index pour la table `referent`
@@ -152,12 +122,6 @@ ALTER TABLE `parcours`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `personne`
---
-ALTER TABLE `personne`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT pour la table `referent`
 --
 ALTER TABLE `referent`
@@ -178,12 +142,6 @@ ALTER TABLE `trail`
 --
 ALTER TABLE `parcours`
   ADD CONSTRAINT `parcours_ibfk_1` FOREIGN KEY (`trail_id`) REFERENCES `trail` (`id`);
-
---
--- Contraintes pour la table `personne`
---
-ALTER TABLE `personne`
-  ADD CONSTRAINT `personne_ibfk_1` FOREIGN KEY (`referent_id`) REFERENCES `referent` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
