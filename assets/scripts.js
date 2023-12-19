@@ -25,21 +25,34 @@ function modifierUtilisateur(event, idUtilisateur) {
         console.error('Le formulaire n\'a pas été trouvé pour l\'utilisateur avec l\'ID:', idUtilisateur);
         return;
     }
-
-    
+  
     var formData = new FormData(form);
     for (let [key, value] of formData.entries()) {
         console.log(key, value);
     }
     
-
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "actions/modifierUtilisateur.php", true);
     xhr.onreadystatechange = function() {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             alert("Modifications enregistrées");
-            //location.reload(); // Pour simplifier, rechargez la page
+            location.reload(); // Rechargement de la page qui permet l'actualisation de l'affichage des données
         }
     }
     xhr.send(formData);
+}
+
+function supprimerUtilisateur(idUtilisateur) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "actions/supprimerUtilisateur.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                alert("Utilisateur supprimé");
+                location.reload();// Rechargement de la page qui permet l'actualisation de l'affichage des données
+            }
+        }
+        xhr.send("idUtilisateur=" + idUtilisateur);
+    }
 }

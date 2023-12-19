@@ -51,10 +51,17 @@
                                     <input type='text' name='idUtilisateur' value='" . htmlspecialchars($row["idUtilisateur"]) . "'style='display:none;'>
                                     <input type='text' name='username' value='" . htmlspecialchars($row["username"]) . "' required>
                                     <input type='email' name='email' value='" . htmlspecialchars($row["email"]) . "' required>
-                                    <!-- Ajoutez d'autres champs ici selon les besoins -->
+                                    <input type='text' name='nomUtilisateur' value='" . htmlspecialchars($row["nomUtilisateur"]) . "' required>
+                                    <input type='text' name='prenomUtilisateur' value='" . htmlspecialchars($row["prenomUtilisateur"]) . "' required>
+                                    <input type='number' name='ageUtilisateur'min='1' max='100' value='" . htmlspecialchars($row["ageUtilisateur"]) . "' required>
+                                    <select name='role' required>
+                                        <option value='admin' " . ($row["role"] == 'admin' ? 'selected' : '') . ">Admin</option>
+                                        <option value='user' " . ($row["role"] == 'user' ? 'selected' : '') . ">User</option>
+                                    </select>
                                     <input type='submit' name='submit'value='Enregistrer'>
                                 </form>
                             </div>
+                            <button onClick='supprimerUtilisateur(" . htmlspecialchars($row["idUtilisateur"]) . ")'>Supprimer</button>
                         </td>
                       </tr>";
             }

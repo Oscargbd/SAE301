@@ -1,21 +1,25 @@
 <?php
 // Connexion à la base de données
 require('../includes/database.php');
-echo '<script>alert("toto")</script>';
 
 if ($_POST) {
-
-    error_log("Données reçues: " . print_r($_POST, true));
 
     $idUtilisateur = $_POST['idUtilisateur'];
     $username = $_POST['username'];
     $email = $_POST['email'];
-    // Récupérez d'autres champs ici selon les besoins
+    $nomUtilisateur = $_POST['nomUtilisateur'];
+    $prenomUtilisateur = $_POST['prenomUtilisateur'];
+    $ageUtilisateur = $_POST['ageUtilisateur'];
+    $role = $_POST['role'];
 
     // Préparation de la requête pour éviter les injections SQL
-    $stmt = $bdd->prepare("UPDATE utilisateur SET username = :userName, email = :email WHERE idUtilisateur = :idUtilistateur");
+    $stmt = $bdd->prepare("UPDATE utilisateur SET username = :userName, email = :email, nomUtilisateur = :nomUtilisateur, prenomUtilisateur = :prenomUtilisateur, ageUtilisateur = :ageUtilisateur, role = :role WHERE idUtilisateur = :idUtilistateur");
     $stmt->bindValue(':userName', $username);
     $stmt->bindValue(':email', $email);
+    $stmt->bindValue(':nomUtilisateur', $nomUtilisateur);
+    $stmt->bindValue(':prenomUtilisateur', $prenomUtilisateur);
+    $stmt->bindValue(':ageUtilisateur', $ageUtilisateur);
+    $stmt->bindValue(':role', $role);
     $stmt->bindValue(':idUtilistateur', $idUtilisateur, PDO::PARAM_INT);
     $success = $stmt->execute();
 
