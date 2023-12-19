@@ -11,7 +11,7 @@
     $_SESSION['nbParticipants'] = $nbParticipants;
     $idParcours = $_GET["id"];
     include('includes/database.php');
-    $requete = "SELECT * FROM parcours WHERE idParcours=" . $idParcours;
+    $requete = "SELECT * FROM trail WHERE id=" . $idParcours;
     $resultat = $bdd->query($requete);
     $parcours = $resultat->fetch(PDO::FETCH_ASSOC);
     $resultat->closeCursor();
@@ -19,7 +19,7 @@
 
    <main>
 
-    <h1><?php echo $parcours['nomParcours'] ?></h1>
+    <h1><?php echo $parcours['nom'] ?></h1>
     <p><?php echo $parcours['descriptionParcours'] ?></p>
 
     <?php
