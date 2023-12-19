@@ -22,17 +22,14 @@ class Trail
     {
         return $this->id;
     }
-
     public function getNom()
     {
         return $this->nom;
     }
-
     public function getDistance()
     {
         return $this->distance;
     }
-
     public function getHeureDepart()
     {
         return $this->heureDepart;
