@@ -8,6 +8,7 @@
     include('includes/navbar.php');
     
     $nbParticipants = $_POST['nbParticipants'];
+    $_SESSION['nbParticipants'] = $nbParticipants;
     $idParcours = $_GET["id"];
     include('includes/database.php');
     $requete = "SELECT * FROM parcours WHERE idParcours=" . $idParcours;
@@ -23,20 +24,18 @@
 
     <?php
     for ($i=1 ; $i<=$nbParticipants ; $i++) {
-        echo "<form method='post' action=''>
+        echo "<form method='post' action='traitementParticipants.php'>
         <div class='formParticipant'>
             <p>Participant ".$i." :</p>
-            <input type='text' name='nom' placeholder='Nom' required>
-            <input type='text' name='prenom' placeholder='Prénom' required>
-            <input type='number' name='age' placeholder='Age' required>
-            <input type='email' name='mail' placeholder='Adresse e-mail' required>
-            <input type='tel' name='tel' placeholder='Numéro de téléphone' required>
-        </div>
-        ";
-    }
-    echo "<input class='validBleu' type='submit' value='Inscrire'>
-    </form>"
-    ?>
+            <input type='text' name='nom".$i."' placeholder='Nom' required>
+            <input type='text' name='prenom".$i."' placeholder='Prénom' required>
+            <input type='number' name='age".$i."' placeholder='Age' required>
+            <input type='email' name='mail".$i."' placeholder='Adresse e-mail' required>
+            <input type='tel' name='tel".$i."' placeholder='Numéro de téléphone' required>
+        </div>";
+    }?>
+        <input class='validBleu' type='submit' name='submit' value='Inscrire'>
+    </form>
 
     </main>
 
