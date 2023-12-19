@@ -5,12 +5,17 @@ include("trail.php");
 include("parcours.php");
 include("referent.php");
 include("config.php");
+include("trailManager.php");
 session_start();
 
 $bdd = new PDO('mysql:host=' . $hote . ';port=' . $port . ';dbname=' . $nombase, $utilisateur, $mdp);
 
 
-$requete = $bdd->query("
+$trailManager = TrailManager::getInstance();
+$trailManager->loadTrails($bdd);
+$trails = $trailManager->getTrails();
+
+/*$requete = $bdd->query("
     SELECT 
         p.cheminImage, 
         t.id AS trailId, t.nom AS trailNom, t.distance, t.heureDepart, 
@@ -30,7 +35,7 @@ while ($donnees = $requete->fetch()) {
     $trail->setParcours($parcours);
     $trails[] = $trail;
 }
-
+*/
 ?>
 
 <!DOCTYPE html>

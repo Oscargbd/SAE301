@@ -3,6 +3,8 @@
 
 <?php include('includes/head.php') ?>
 
+<title>Billetterie</title>
+
 <body>
     <?php
     include('includes/navbar.php');
