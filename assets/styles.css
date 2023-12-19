@@ -250,20 +250,23 @@ header {
     text-align: center;
 }
 
-.titre-glaces {
-    font-size: 15vw;
-    margin: 0;
-    font-family: lufgabold;
+
+
+.titre-glaces, .titre-trail {
+    font-family: 'lufgabold';
     color: white;
-    margin-top: 5px;
-    margin-left: 20px;
+    margin: 0;
+}
+
+.titre-glaces {
+    display: flex;
+    font-size: 15vw;
+    margin: 0 auto;
+    
 }
 
 .titre-trail {
     font-size: 2.5vw;
-    margin: 0;
-    font-family: lufgabold;
-    color: white;
 }
 
 .bouton-inscription {
@@ -298,7 +301,7 @@ header {
 
 .bouton-info{
     font-size: 0.9765625vw;
-    bottom: 20px;
+    margin: 20px;
     justify-content: center;
     width: fit-content;
     height: 3vw;
@@ -325,8 +328,6 @@ header {
     width: 83%;
     text-align: center; 
 }
-
-
 
 .conteneur-cartes {
     display: flex;
@@ -359,6 +360,10 @@ header {
                 FAQ
 --------------------------------*/
 
+.pseudoFaq {
+    display: flex;
+}
+
 .pseudoFaq strong {
     font-family: lufgablack;
     margin-right: 1vw;
@@ -370,6 +375,10 @@ header {
     padding: 2vw;
     border-radius: 1vw;
     margin-bottom: 2vw;
+}
+
+.adminPseudo {
+    color: #007ca6;
 }
 
 hr {
@@ -535,9 +544,10 @@ POO - Parcours
 ----------------------------*/
 
 .img-poo {
-    width: 300px;
-    height: 300px;
+    width: 20vw;
+    height: 20vw;
     border-radius: 0.8vw;
+    object-fit: cover;
 }
 
 .contenaire_poo {
@@ -550,14 +560,21 @@ POO - Parcours
 .block_poo {
     display: flex;
     flex-direction: column;
-    margin: 20px;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 1.5vw;
+    padding: 1vw;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     border-radius: 0.8vw;
+    width: 20vw;
 }
 
 .txt-poo {
     padding: 10px 0px 0px 10px;
+}
+
+.btn_poo {
+    text-align: center;
 }
 
 /* PAGE ADMIN */
@@ -587,3 +604,4 @@ POO - Parcours
     color: white;
     transition-duration: .2s;
 }
+

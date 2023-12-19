@@ -21,10 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $username = htmlspecialchars($row['username']);
         $message = htmlspecialchars($row['message']);
         $role = htmlspecialchars($row['role']);
+        $date = htmlspecialchars($row['timestamp']);
 
         if ($role === 'admin') {
             // Si l'utilisateur est administrateur, ajoutez une indication
-            echo "<p class='pseudoFaq'><strong>[ADMIN] $username:</strong> $message<hr></p>";
+            echo "<p class='pseudoFaq'><strong class='adminPseudo'>[ADMIN] $username:</strong> $message<hr></p>";
         } else {
             echo "<p class='pseudoFaq'><strong>$username:</strong> $message<hr></p>";
         }
