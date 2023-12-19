@@ -16,7 +16,7 @@
     $resultat->closeCursor();
     ?>
 
-   
+   <main>
 
     <h1><?php echo $parcours['nomParcours'] ?></h1>
     <p><?php echo $parcours['descriptionParcours'] ?></p>
@@ -38,7 +38,7 @@
     </form>"
     ?>
 
-    
+    </main>
 
 </body>
 </html>

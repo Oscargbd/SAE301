@@ -10,10 +10,12 @@
 
 <body>
     <?php
-
     include('includes/navbar.php');
+    ?>
 
+    <main>
 
+    <?php
     if (isset($_SESSION["username"])) {
         echo "<p>Votre pseudo actuel : " . $_SESSION["username"] . "</p>
         <form method='post' action=''>
@@ -78,6 +80,7 @@
     ?>
     <a href="actions/logoutAction.php">Déconnexion</a> <!-- Bouton de déconnexion qui fonctionne avec le script logoutAction.php -->
     <a href="actions/deleteAction.php">Supprimer mon compte</a> <!-- Bouton de suppression de compte qui fonctionne avec le script signupAction.php -->
+    </main>
 </body>
 
 </html>

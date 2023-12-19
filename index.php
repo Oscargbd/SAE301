@@ -14,7 +14,7 @@
             include('includes/navbar.php');
         ?>
     </header>
-    
+    <main>
     
     <div class="div-principale">
         <div class="background-image">
@@ -34,7 +34,7 @@
         <p>Le trail des glaces c'est quoi ?</p>
     </div>
 
-
+    </main>
 </body>
     
 </html>

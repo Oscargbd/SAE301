@@ -23,7 +23,6 @@ body{
 
 nav {
     display: flex;
-    background-color: none;
     padding: 1vw;
     background: linear-gradient(rgb(0, 0, 0), rgba(255, 255, 255, 0));
     position: fixed;
