@@ -16,10 +16,10 @@
             <h2>Connectez-vous !</h2>
             <form action="actions/loginAction.php" method="post">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Votre adresse mail" required>
+                <input class="inputlogin" type="email" id="email" name="email" placeholder="Votre adresse mail" required>
                 <br>
                 <label for="password">Mot de Passe</label>
-                <input type="password" id="password" name="password" placeholder="Votre mot de passe" >
+                <input class="inputlogin" type="password" id="password" name="password" placeholder="Votre mot de passe" >
                 <br>
                 <button type="submit">Se connecter</button>
             </form>

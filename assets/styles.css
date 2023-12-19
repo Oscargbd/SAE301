@@ -134,7 +134,7 @@ label {
     margin-bottom: 5px;
 }
 
-input {
+.inputlogin{
     padding-left: 5px;
     font-family: lufga;
     height: 42px;
@@ -345,10 +345,11 @@ header {
     align-items: center;
     margin-top: 20px;
     width: 80%;
+    margin: auto;
 }
 
 .rectangle {
-    width: fit-content;
+    max-width: 600px;
     height:  26.041666666666668vw;
     border-radius: 1.6276041666666667vw;
     margin-right: 10px;
@@ -356,7 +357,7 @@ header {
 }
 
 .square {
-    width: fit-content;
+    max-width: 400px;
     height:  26.041666666666668vw;
     border-radius: 1.6276041666666667vw;
     margin: 10px;

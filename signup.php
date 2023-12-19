@@ -16,22 +16,22 @@
         <h2>Inscrivez vous !</h2>
         <form action="actions/signupaction.php" method="post">
             <label for="username">Nom d'utilisateur</label>
-            <input type="text" id="username" name="username" placeholder="Votre nom d'utilisateur" required>
+            <input class="inputlogin" type="text" id="username" name="username" placeholder="Votre nom d'utilisateur" required>
             <br>
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Votre adresse mail" required>
+            <input class="inputlogin" type="email" id="email" name="email" placeholder="Votre adresse mail" required>
             <br>
             <label for="password">Mot de Passe</label>
-            <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
+            <input class="inputlogin" type="password" id="password" name="password" placeholder="Votre mot de passe" required>
             <br>
             <label for="nomUtilisateur">Nom</label>
-            <input type="text" id="nomUtilisateur" name="nomUtilisateur" placeholder="Votre nom" required>
+            <input class="inputlogin" type="text" id="nomUtilisateur" name="nomUtilisateur" placeholder="Votre nom" required>
             <br>
             <label for="prenomUtilisateur">Prénom</label>
-            <input type="text" id="prenomUtilisateur" name="prenomUtilisateur" placeholder="Votre prénom" required>
+            <input class="inputlogin" type="text" id="prenomUtilisateur" name="prenomUtilisateur" placeholder="Votre prénom" required>
             <br>
             <label for="ageUtilisateur">Âge</label>
-            <input type="text" id="ageUtilisateur" name="ageUtilisateur" placeholder="Votre âge" >
+            <input class="inputlogin" type="text" id="ageUtilisateur" name="ageUtilisateur" placeholder="Votre âge" >
             <br>
             <button type="submit">S'inscrire</button>
         </form>

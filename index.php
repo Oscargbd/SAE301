@@ -62,7 +62,7 @@ undoubtable source</p>
 
         <div class="carte">
             <i class="fa fa-globe"><img src="images/icon/Fichier 5.png" alt=""></i> 
-            <h3>heure</h3>
+            <h3>18H</h3>
             <p>Lorem Ipsum is simply dummy
             text of the printing and
             typesetting industry. Lorem
@@ -96,7 +96,7 @@ undoubtable source</p>
 
 
     <div class="separateur"></div>
-    </main>
+   
         <h2>Et en photo, ça donne quoi ?</h2>
      <div class="image-container">
         <img class="rectangle" src="images/galerie img 5.jpg" alt="">
@@ -104,7 +104,8 @@ undoubtable source</p>
         <img class="square" src="images/galerie img 6.jpg" alt="">
         <img class="rectangle" src="images/galerie img2.jpg" alt="">
 
-    </div>
+    </div> 
+</main>
 </body>
     
 </html>
