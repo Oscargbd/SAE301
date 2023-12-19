@@ -45,7 +45,7 @@ function modifierUtilisateur(event, idUtilisateur) {
 function supprimerUtilisateur(idUtilisateur) {
     if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "actions/supprimerUtilisateur.php", true);
+        xhr.open("POST", "actions/supprimerUtilisateur.php", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function() {
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
