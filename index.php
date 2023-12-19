@@ -48,7 +48,7 @@ undoubtable source</p>
 
     <div class="conteneur-cartes">
         <div class="carte">
-            <i class="fa fa-rocket"><img src="images/icon/Fichier 6.png" alt=""></i> 
+            <i><img src="images/icon/Fichier 6.png" alt=""></i> 
             <h3>Date</h3>
             <p>Lorem Ipsum is simply dummy
             text of the printing and
@@ -61,7 +61,7 @@ undoubtable source</p>
         </div>
 
         <div class="carte">
-            <i class="fa fa-globe"><img src="images/icon/Fichier 5.png" alt=""></i> 
+            <i><img src="images/icon/Fichier 5.png" alt=""></i> 
             <h3>18H</h3>
             <p>Lorem Ipsum is simply dummy
             text of the printing and
@@ -74,7 +74,7 @@ undoubtable source</p>
         </div>
 
         <div class="carte">
-            <i class="fa fa-heart"><img src="images/icon/Fichier 7.png" alt=""></i> 
+            <i><img src="images/icon/Fichier 7.png" alt=""></i> 
             <h3>Les Estables, 43260</h3>
             <p>Lorem Ipsum is simply dummy
             text of the printing and
@@ -97,8 +97,9 @@ undoubtable source</p>
 
     <div class="separateur"></div>
    
-        <h2>Et en photo, ça donne quoi ?</h2>
+        <h2 class="titresectionphoto">Et en photo, ça donne quoi ?</h2>    
      <div class="image-container">
+        
         <img class="rectangle" src="images/galerie img 5.jpg" alt="">
         <img class="square" src="images/galerie img 1.jpg" alt="">
         <img class="square" src="images/galerie img 6.jpg" alt="">
