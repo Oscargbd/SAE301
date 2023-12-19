@@ -5,9 +5,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Récupérez les messages existants et affichez-les au format HTML
     require('../includes/database.php');
 
-    $stmt = $bdd->prepare("SELECT chat.message, utilisateur.username, utilisateur.role FROM chat 
-                           INNER JOIN utilisateur ON chat.user_id = utilisateur.idUtilisateur
-                           ORDER BY chat.timestamp ASC");
+    $stmt = $bdd->prepare("SELECT subquery.message, subquery.username, subquery.role, subquery.timestamp
+    FROM (
+        SELECT chat.message, utilisateur.username, utilisateur.role, chat.timestamp 
+        FROM chat 
+        INNER JOIN utilisateur ON chat.user_id = utilisateur.idUtilisateur
+        ORDER BY chat.timestamp DESC
+        LIMIT 20
+    ) AS subquery
+    ORDER BY subquery.timestamp ASC
+    ");
     $stmt->execute();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -17,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         if ($role === 'admin') {
             // Si l'utilisateur est administrateur, ajoutez une indication
-            echo "<p><strong>[ADMIN] $username:</strong> $message</p>";
+            echo "<p class='pseudoFaq'><strong>[ADMIN] $username:</strong> $message<hr></p>";
         } else {
-            echo "<p><strong>$username:</strong> $message</p>";
+            echo "<p class='pseudoFaq'><strong>$username:</strong> $message<hr></p>";
         }
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {

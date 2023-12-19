@@ -9,12 +9,10 @@
 
 <body class="bodyindex">
 
-    <header>
         <?php
             include('includes/navbar.php');
         ?>
-    </header>
-    <main>
+    <main class="mainIndex">
     
     <div class="div-principale">
         <div class="background-image">
