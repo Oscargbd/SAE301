@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : mar. 19 déc. 2023 à 14:27
--- Version du serveur : 10.4.28-MariaDB
--- Version de PHP : 8.2.4
+-- Hôte : localhost:8889
+-- Généré le : mar. 19 déc. 2023 à 15:14
+-- Version du serveur : 5.7.34
+-- Version de PHP : 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `chat` (
   `idChat` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `message` text DEFAULT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `message` text,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `chat`
@@ -50,19 +50,6 @@ INSERT INTO `chat` (`idChat`, `user_id`, `message`, `timestamp`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `equipement`
---
-
-CREATE TABLE `equipement` (
-  `idEquip` int(200) NOT NULL,
-  `typeEquip` varchar(200) NOT NULL,
-  `pointureRaq` int(200) NOT NULL,
-  `idUtilisateur` int(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `parcours`
 --
 
@@ -73,7 +60,7 @@ CREATE TABLE `parcours` (
   `distance` varchar(200) DEFAULT NULL,
   `denivele` varchar(200) DEFAULT NULL,
   `idParticipant` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `parcours`
@@ -96,9 +83,9 @@ CREATE TABLE `participant` (
   `nomParticipant` varchar(200) NOT NULL,
   `prenomParticipant` varchar(200) NOT NULL,
   `ageParticipant` int(200) NOT NULL,
-  `numDossard` int(200) NOT NULL,
-  `idUtilisateur` int(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `idUtilisateur` int(200) NOT NULL,
+  `mailParticipant` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -111,7 +98,7 @@ CREATE TABLE `photo` (
   `url` varchar(500) NOT NULL,
   `alt` varchar(200) NOT NULL,
   `idUtilisateur` int(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -123,7 +110,7 @@ CREATE TABLE `referent` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) DEFAULT NULL,
   `contact` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `referent`
@@ -146,7 +133,7 @@ CREATE TABLE `trail` (
   `nom` varchar(255) DEFAULT NULL,
   `distance` int(11) DEFAULT NULL,
   `heureDepart` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `trail`
@@ -154,9 +141,9 @@ CREATE TABLE `trail` (
 
 INSERT INTO `trail` (`id`, `nom`, `distance`, `heureDepart`) VALUES
 (1, 'Marche Polaire', 5, '17:00'),
-(2, 'Trail des pingouin', 10, '18:00'),
+(2, 'Trail des Husky', 10, '18:00'),
 (3, 'Trail des alpinistes', 15, '18:30'),
-(4, 'Trail des loup', 20, '19:00');
+(4, 'Trail des loups', 20, '19:00');
 
 -- --------------------------------------------------------
 
@@ -172,17 +159,16 @@ CREATE TABLE `utilisateur` (
   `nomUtilisateur` varchar(200) NOT NULL,
   `prenomUtilisateur` varchar(200) NOT NULL,
   `ageUtilisateur` int(200) NOT NULL,
-  `idEquipement` int(200) NOT NULL,
   `role` varchar(255) NOT NULL DEFAULT 'user'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`idUtilisateur`, `username`, `email`, `password`, `nomUtilisateur`, `prenomUtilisateur`, `ageUtilisateur`, `idEquipement`, `role`) VALUES
-(10, 'admin', 'admin@admin.com', '$2y$10$iWDQO/TiJNFa5YXhJJuzO..a1ii25xOc0bus8mBlYTnwnEBaX8Gpy', 'admin', 'admin', 19, 0, 'user'),
-(11, 'lilrom1__', 'romain.montes55@gmail.com', '$2y$10$Lx7ptevTU65dbduZ1SuHAOewpqP5zUvtl8LKuaCUYUIoiydIB0rXy', 'Montes', 'Romain', 19, 0, 'admin');
+INSERT INTO `utilisateur` (`idUtilisateur`, `username`, `email`, `password`, `nomUtilisateur`, `prenomUtilisateur`, `ageUtilisateur`, `role`) VALUES
+(10, 'admin', 'admin@admin.com', '$2y$10$iWDQO/TiJNFa5YXhJJuzO..a1ii25xOc0bus8mBlYTnwnEBaX8Gpy', 'admin', 'admin', 19, 'user'),
+(11, 'lilrom1__', 'romain.montes55@gmail.com', '$2y$10$Lx7ptevTU65dbduZ1SuHAOewpqP5zUvtl8LKuaCUYUIoiydIB0rXy', 'Montes', 'Romain', 19, 'admin');
 
 --
 -- Index pour les tables déchargées
@@ -194,13 +180,6 @@ INSERT INTO `utilisateur` (`idUtilisateur`, `username`, `email`, `password`, `no
 ALTER TABLE `chat`
   ADD PRIMARY KEY (`idChat`),
   ADD KEY `user_id` (`user_id`);
-
---
--- Index pour la table `equipement`
---
-ALTER TABLE `equipement`
-  ADD PRIMARY KEY (`idEquip`),
-  ADD KEY `idUtilisateur` (`idUtilisateur`);
 
 --
 -- Index pour la table `parcours`
@@ -240,8 +219,7 @@ ALTER TABLE `trail`
 -- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`idUtilisateur`),
-  ADD KEY `idEquipement` (`idEquipement`);
+  ADD PRIMARY KEY (`idUtilisateur`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -252,12 +230,6 @@ ALTER TABLE `utilisateur`
 --
 ALTER TABLE `chat`
   MODIFY `idChat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT pour la table `equipement`
---
-ALTER TABLE `equipement`
-  MODIFY `idEquip` int(200) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `parcours`
@@ -304,12 +276,6 @@ ALTER TABLE `utilisateur`
 --
 ALTER TABLE `chat`
   ADD CONSTRAINT `chat_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `utilisateur` (`idUtilisateur`);
-
---
--- Contraintes pour la table `equipement`
---
-ALTER TABLE `equipement`
-  ADD CONSTRAINT `equipement_ibfk_1` FOREIGN KEY (`idUtilisateur`) REFERENCES `utilisateur` (`idUtilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `parcours`
