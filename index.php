@@ -47,27 +47,64 @@ undoubtable source</p>
     <div class="separateur"></div>
 
     <div class="conteneur-cartes">
-    <div class="carte">
-    <i class="fa fa-rocket"></i> 
-    <h3>Date</h3>
-    <p>Ceci est le texte de la carte 1.</p>
-  </div>
+        <div class="carte">
+            <i class="fa fa-rocket"><img src="images/icon/Fichier 6.png" alt=""></i> 
+            <h3>Date</h3>
+            <p>Lorem Ipsum is simply dummy
+            text of the printing and
+            typesetting industry. Lorem
+            Ipsum has been the industry's
+            standard dummy text ever
+            since the 1500s, when an
+            unknown printer took a galley
+            of type.</p>
+        </div>
 
-  <div class="carte">
-    <i class="fa fa-globe"></i> 
-    <h3>heure</h3>
-    <p>Ceci est le texte de la carte 2.</p>
-  </div>
+        <div class="carte">
+            <i class="fa fa-globe"><img src="images/icon/Fichier 5.png" alt=""></i> 
+            <h3>heure</h3>
+            <p>Lorem Ipsum is simply dummy
+            text of the printing and
+            typesetting industry. Lorem
+            Ipsum has been the industry's
+            standard dummy text ever
+            since the 1500s, when an
+            unknown printer took a galley
+            of type.</p>
+        </div>
 
-  <div class="carte">
-    <i class="fa fa-heart"></i> 
-    <h3>Les Estables, 43260</h3>
-    <p>Ceci est le texte de la carte 3.</p>
-  </div>
-  </div>
+        <div class="carte">
+            <i class="fa fa-heart"><img src="images/icon/Fichier 7.png" alt=""></i> 
+            <h3>Les Estables, 43260</h3>
+            <p>Lorem Ipsum is simply dummy
+            text of the printing and
+            typesetting industry. Lorem
+            Ipsum has been the industry's
+            standard dummy text ever
+            since the 1500s, when an
+            unknown printer took a galley
+            of type.</p>
+        </div>
+    </div>
+        <div class="bouton-container">
+            <a href="billeterie.php"><button class="bouton-info">Je réserve ma place</button></a>
+        </div>
+
+        
+
+   
+
 
     <div class="separateur"></div>
     </main>
+        <h2>Et en photo, ça donne quoi ?</h2>
+     <div class="image-container">
+        <img class="rectangle" src="images/galerie img 5.jpg" alt="">
+        <img class="square" src="images/galerie img 1.jpg" alt="">
+        <img class="square" src="images/galerie img 6.jpg" alt="">
+        <img class="rectangle" src="images/galerie img2.jpg" alt="">
+
+    </div>
 </body>
     
 </html>
