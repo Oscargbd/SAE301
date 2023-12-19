@@ -16,7 +16,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $user_password = htmlspecialchars($_POST['password']);
 
         // Requête pour récupérer les informations de l'utilisateur
-        $getUserInfo = $bdd->prepare('SELECT idUtilisateur, username, email, password FROM utilisateur WHERE email = ?');
+        $getUserInfo = $bdd->prepare('SELECT idUtilisateur, username, email, password, role FROM utilisateur WHERE email = ?');
         $getUserInfo->execute(array($user_email));
 
         if ($getUserInfo->rowCount() > 0) {
@@ -30,6 +30,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 $_SESSION['id'] = $userInfo['idUtilisateur'];
                 $_SESSION['email'] = $userInfo['email'];
                 $_SESSION['username'] = $userInfo['username'];
+                $_SESSION['role'] = $userInfo['role'];
 
                 // Rediriger l'utilisateur vers la page d'accueil
                 header('Location: ../index.php');

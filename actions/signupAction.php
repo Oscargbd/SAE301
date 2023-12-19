@@ -49,6 +49,7 @@ if (
         $_SESSION['id'] = $usersInfos['idUtilisateur'];
         $_SESSION['username'] = $usersInfos['username'];
         $_SESSION['email'] = $usersInfos['email'];
+        $_SESSION['role'] = $userInfo['role'];
 
         // Rediriger l'utilisateur vers la page d'accueil
         header('Location: ../index.php');

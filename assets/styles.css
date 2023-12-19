@@ -432,3 +432,15 @@ POO - Parcours
 .txt-poo {
     padding: 10px 0px 0px 10px;
 }
+
+/* PAGE ADMIN */
+.tablinks {
+    cursor: pointer;
+   }
+   .tabcontent {
+       display: none;
+   }
+   
+   .tablinks.active .tabcontent {
+       display: block;
+   }
