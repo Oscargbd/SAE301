@@ -114,7 +114,6 @@ h3{
 
 /* page login.php */
 
-
 .pageLogin {
     display: flex;
     z-index: 1;
@@ -176,21 +175,40 @@ button {
     margin-top: 5px;
 }
 
-
-@media (max-width: 768px) {
-    .login-container {
-        justify-content: center; 
-    }
-
-    .login-form {
-        margin-left: auto; 
-    }
-}
-
 .login-form p {
     text-align: center;
     margin-top: 2vw;
 }
+
+@media (max-width: 670px) {
+    .login-form {
+        margin: 10vw auto;
+        padding: 5%;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        background-color: rgba(255,255,255,0.7);
+        width: 80%;
+        border-radius: 20px;
+    }
+
+    .h2-login {
+        font-size: 16px;
+    }
+
+    /* Changer l'image de fond pour les appareils mobiles */
+    .body-login {
+            background-image: url('../img/flocon.png');
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
+
+    .titrelogin, .img-login {
+
+        visibility: hidden;
+    }
+}
+
+
 
 /* page d'accueil */
 

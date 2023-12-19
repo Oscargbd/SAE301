@@ -3,17 +3,15 @@
 
 <?php include('includes/head.php') ?>
 
-<body>
-    <?php
-    include('includes/navbar.php');
-    ?>
+<body class="body-login">
+    <?php //mettre la navbar quand elle sera responsive ?>
     <main class='pageLogin'>
         <div>
-            <img src="img/fondLoginPng.png">
+            <img class="img-login" src="img/fondLoginPng.png">
             <h1 class="titrelogin">Le<br>Trail des<br>glaces</h1>
         </div>
         <div class="login-form">
-            <h2>Connectez-vous !</h2>
+            <h2 class="h2-login">Connectez-vous !</h2>
             <form action="actions/loginAction.php" method="post">
                 <label for="email">Email</label>
                 <input class="inputlogin" type="email" id="email" name="email" placeholder="Votre adresse mail" required>
@@ -27,7 +25,7 @@
             <div class="errorMSG">
                 <?php
                 if (isset($_SESSION['errorMSG'])) {
-                    echo '<p>' . $_SESSION['errorMSG'] . '</p>';
+                    ?><p> <?php $_SESSION['errorMSG'] ?></p> <?php ;
                     unset($_SESSION['errorMSG']); // Pour effacer le message après l'avoir affiché
                 }
                 ?>
