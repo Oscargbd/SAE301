@@ -30,7 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `parcours` (
   `id` int(11) NOT NULL,
   `trail_id` int(11) DEFAULT NULL,
-  `cheminImage` varchar(255) DEFAULT NULL
+  `cheminImage` varchar(255) DEFAULT NULL,
+  `distance` varchar(200) DEFAULT NULL, -- Ajouté de la BDD 1
+  `denivele` varchar(200) DEFAULT NULL  -- Ajouté de la BDD 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
