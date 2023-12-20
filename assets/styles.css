@@ -613,7 +613,48 @@ POO - Parcours
     width: 20vw;
 }
 
-.txt-poo {
+@media (max-width: 670px){
+
+    .contenaire_poo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .block_poo {
+        width: 80%;
+        margin: 10px 0px 10px 0px;
+        border-radius: 16px;
+        box-shadow: rgba(0, 0, 0, 0.6) 0px 25px 50px -12px;
+
+    }
+
+    .contenaire-img-poo {
+        width: 100%;
+        height: 150px;
+    }
+
+    .img-poo {
+        width: 100%;
+        border-radius: 16px;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .txt-poo {
+        font-size: 4vw;
+    }
+
+    .txt-poo-2 {
+        font-size: 4.8vw;
+    }
+
+    .h3-poo {
+        font-size: 6vw;
+    }
+
+}
+
+.contenaire-txt-poo {
     padding: 10px 0px 0px 10px;
 }
 
