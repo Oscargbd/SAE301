@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    
+
     <?php
     include('includes/navbar.php');
     // Vérifiez si l'utilisateur est connecté et a le rôle d'administrateur
@@ -20,11 +20,13 @@
     ?>
 
     <main>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#007CA6" fill-opacity="1" d="M0,160L80,144C160,128,320,96,480,106.7C640,117,800,171,960,197.3C1120,224,1280,224,1360,224L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
-    <h1 class='hautPage'>Mon compte</h1>
-    <?php
-    if (isset($_SESSION["username"])) {
-        echo "<p>Votre pseudo actuel : " . $_SESSION["username"] . "</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#007CA6" fill-opacity="1" d="M0,160L80,144C160,128,320,96,480,106.7C640,117,800,171,960,197.3C1120,224,1280,224,1360,224L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+        </svg>
+        <h1 class='hautPage'>Mon compte</h1>
+        <?php
+        if (isset($_SESSION["username"])) {
+            echo "<p>Votre pseudo actuel : " . $_SESSION["username"] . "</p>
         <form method='post' action=''>
             <input type='text' name='changePseudo' placeholder='Modifier mon pseudo' required />
             <input type='submit' name='validerPseudo' value='Modifier'/>
@@ -85,9 +87,79 @@
         }
 
         ?>
-        <a href="actions/logoutAction.php">Déconnexion</a> <!-- Bouton de déconnexion qui fonctionne avec le script logoutAction.php -->
-        <a href="actions/deleteAction.php">Supprimer mon compte</a> <!-- Bouton de suppression de compte qui fonctionne avec le script signupAction.php -->
+        <a href="actions/logoutAction.php"><button class="bouton-info">Déconnexion</button></a> <!-- Bouton de déconnexion qui fonctionne avec le script logoutAction.php -->
+        <a href="actions/deleteAction.php"><button class="bouton-info">Supprimer mon compte</button></a> <!-- Bouton de suppression de compte qui fonctionne avec le script signupAction.php -->
+
+        <section class='reservation'>
+    <h1>Mes réservations</h1>
+    <?php
+    // Récupérer les réservations de l'utilisateur
+    $reservationsQuery = "SELECT trail.id, trail.nom AS nom_parcours, participant.* 
+                          FROM participant 
+                          JOIN trail ON participant.idTrail = trail.id 
+                          WHERE participant.idUtilisateur = :idUtilisateur";
+    $reservationsStatement = $bdd->prepare($reservationsQuery);
+    $reservationsStatement->bindParam(':idUtilisateur', $_SESSION['id']);
+    $reservationsStatement->execute();
+    $reservations = $reservationsStatement->fetchAll(PDO::FETCH_ASSOC);
+
+    // Vérifier si le compte a des réservations
+    if (!empty($reservations)) {
+        // Initialiser un tableau pour stocker les noms de parcours déjà affichés
+        $parcoursAffiches = array();
+
+        // Afficher les réservations
+        foreach ($reservations as $reservation) {
+            $idTrail = $reservation['id'];
+
+            // Vérifier si le nom du parcours a déjà été affiché
+            if (!in_array($idTrail, $parcoursAffiches)) {
+                echo "<h2>{$reservation['nom_parcours']}</h2>";
+                $parcoursAffiches[] = $idTrail; // Ajouter le nom du parcours à la liste des parcours déjà affichés
+            }
+
+            // Afficher les détails du participant
+            echo "<ul>";
+            foreach ($reservation as $key => $value) {
+                // Ignorer les colonnes non liées aux participants
+                if (strpos($key, 'nomParticipant') === 0) {
+                    $participantNumber = preg_replace("/[^0-9]/", "", $key); // Récupérer les chiffres de la clé
+                    echo "<li><strong>Participant :</strong>
+                          <ul>
+                              <li><strong>Nom :</strong> $value</li>
+                              <li><strong>Prénom :</strong> {$reservation['prenomParticipant' . $participantNumber]}</li>
+                              <li><strong>Âge :</strong> {$reservation['ageParticipant' . $participantNumber]}</li>
+                              <li><strong>Email :</strong> {$reservation['mailParticipant' . $participantNumber]}</li>
+                          </ul>
+                          </li>";
+
+                    // Ajouter un formulaire pour le bouton "Désinscrire"
+                    echo "<form method='post' action='actions/desinscrireAction.php'>
+                            <input type='hidden' name='idParticipant' value='{$reservation['idParticipant' . $participantNumber]}' />
+                            <input type='submit' name='desinscrire' value='Désinscrire' />
+                          </form>";
+                }
+            }
+            echo "</ul>";
+        }
+
+        // Fermez la section réservation
+        echo "</section>";
+    } else {
+        // Si le compte n'a pas de réservations
+        echo "<p>Vous n'avez aucune réservation.</p>";
+    }
+    ?>
+</section>
     </main>
+
+    <footer>
+
+        <?php
+        include('includes/footer.php');
+        ?>
+
+    </footer>
 </body>
 
 </html>

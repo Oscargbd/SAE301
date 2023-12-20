@@ -10,13 +10,32 @@
     <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="bodyfooter">
+
 
     <footer>
-        <img src="../images/flocon2.png" alt="">
-        <h2>Titre</h2>
-        <div id="white-box"></div>
+        <div>
+            <img class="logofooter" src="images/logoblanc.png" alt="">
+
+            <h2>Rejoignez notre Association</h2>
+
+            <p>Devenez adhérents et profitez de tout nos futurs <br> évènements...</p>
+
+            <div class="rec-reseau">
+                <div >
+                    <a class="reseau" href="https://www.instagram.com/caf_horizon_vertical/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="><button class="bouton-info">Instagram</button></a>
+                    <a class="reseau" href=""><button class="bouton-info">LinkedIn</button></a>
+                    <a class="reseau" href=""><button class="bouton-info">Twitter</button></a>
+                    <a class="reseau" href=""><button class="bouton-info">Whatsapp</button></a>
+                    <a class="reseau" href=""><button class="bouton-info">Pinterest</button></a>
+                </div>
+                <div class="separateur-footer"></div>
+
+            <p>©2023, Tout droits réservés.</p>
+            </div>
+
+            
+        </div>
     </footer>
-</body>
+
 
 </html>

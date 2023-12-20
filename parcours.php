@@ -4,9 +4,7 @@ include("POO/trail.php");
 include("POO/parcours.php");
 include("POO/referent.php");
 include("POO/trailManager.php");
-include("includes/config.php");
-
-$bdd = new PDO('mysql:host=' . $hote . ';port=' . $port . ';dbname=' . $nomBD, $identifiant, $pass);
+include("includes/database.php");
 
 $trailManager = TrailManager::getInstance();
 $trailManager->loadTrails($bdd);
@@ -58,15 +56,22 @@ $trails = $trailManager->getTrails();
                             <p class="txt-poo">Contact: <?= htmlspecialchars($trail->getReferent()->getContact()); ?></p>
                         </div>
                     </div>
-                    <div class="btn_poo">
-                        <form method='post' action='reservation.php?id=3'>
-                            <label class="txt-poo-2">Participants :</label>
-                            <input type='number' name='nbParticipants' min='1' max='20' value='1'>
-                            <input class='validBleu' type='submit' value='Réserver'>
-                        </form>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+                    <div class='btn_poo'>
+            <?php
+            if (isset($_SESSION["username"])) {
+                echo "<form method='post' action='reservation.php?id=" . htmlspecialchars($trail->getId()) . "'>"; // Ajout de l'ID du trail dans l'URL
+                echo "<input type='hidden' name='trail_id' value='" . htmlspecialchars($trail->getId()) . "'>"; // Champ caché pour stocker l'ID du trail
+                echo "<label class="txt-poo-2">Participants :</label>";
+                echo "<input type='number' name='nbParticipants' min='1' max='20' value='1'>";
+                echo "<input class='validBleu' type='submit' value='Réserver'>";
+                echo "</form>";
+            } else {
+                echo "<i>Vous devez être connecté pour réserver des places.</i>";
+            }
+            ?>
+        </div>
+    </div>
+<?php endforeach; ?>
         </div>
     </main>
 </body>
