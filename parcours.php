@@ -25,7 +25,7 @@ $trails = $trailManager->getTrails();
 <body class="bodyindex">
 
     <?php
-    // include('includes/navbar.php');
+    include('includes/navbar.php');
     ?>
 
     <main>
@@ -61,7 +61,7 @@ $trails = $trailManager->getTrails();
             if (isset($_SESSION["username"])) {
                 echo "<form method='post' action='reservation.php?id=" . htmlspecialchars($trail->getId()) . "'>"; // Ajout de l'ID du trail dans l'URL
                 echo "<input type='hidden' name='trail_id' value='" . htmlspecialchars($trail->getId()) . "'>"; // Champ caché pour stocker l'ID du trail
-                echo "<label class="txt-poo-2">Participants :</label>";
+                echo '<label class="txt-poo-2">Participants :</label>';
                 echo "<input type='number' name='nbParticipants' min='1' max='20' value='1'>";
                 echo "<input class='validBleu' type='submit' value='Réserver'>";
                 echo "</form>";

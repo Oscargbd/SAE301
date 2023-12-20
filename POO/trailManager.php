@@ -21,18 +21,20 @@ class TrailManager
     {
         $requete = $bdd->query("
         SELECT 
-            p.cheminImage, 
-            t.id AS trailId, t.nom AS trailNom, t.distance, t.heureDepart, 
-            r.nom AS referentNom, r.contact 
+        p.cheminImage, 
+        t.id AS trailId, t.nom AS trailNom, t.distance, t.heureDepart, t.referent_id,
+        r.id AS referentId, r.nom AS referentNom, r.contact 
         FROM Trail t
         LEFT JOIN Parcours p ON p.trail_id = t.id
-        LEFT JOIN Referent r ON r.id = t.id
+        LEFT JOIN Referent r ON r.id = t.referent_id
         ORDER BY t.id DESC
-    ");
+        ");
 
         while ($donnees = $requete->fetch()) {
             $trail = new Trail($donnees['trailId'], $donnees['trailNom'], $donnees['distance'], $donnees['heureDepart']);
-            $trail->setReferent(new Referent($donnees['referentNom'], $donnees['contact']));
+            $referent = new Referent($donnees['referentId'], $donnees['referentNom'], $donnees['contact']);
+            $referent->getId($donnees['referentId']); // Assurez-vous que la classe Referent a une méthode setId
+            $trail->setReferent($referent);
             $parcours = new Parcours($donnees['cheminImage'], $donnees['description'] ?? '', $donnees['pointsDePassage'] ?? 0, $donnees['cheminImage']);
             $trail->setParcours($parcours);
             $this->trails[] = $trail;

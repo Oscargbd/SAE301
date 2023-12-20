@@ -6,8 +6,9 @@ class Referent
     protected $nom;
     protected $contact;
     // Constructeur
-    public function __construct($nom, $contact)
+    public function __construct($id, $nom, $contact)
     {
+        $this->id = $id;
         $this->nom = $nom;
         $this->contact = $contact;
     }
@@ -30,5 +31,8 @@ class Referent
     {
         $this->nom = $nom;
         $this->contact = $contact;
+    }
+    public function getId() {
+        return $this->id;
     }
 }

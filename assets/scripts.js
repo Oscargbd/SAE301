@@ -109,3 +109,75 @@ function creerUtilisateur(event) {
     }
     xhr.send(formData);
 }
+
+function modifierParcours(event, idParcours) {
+    event.preventDefault(); // Empêcher la soumission standard du formulaire
+
+    var form = document.getElementById('formModifParcours_' + idParcours);
+    var formData = new FormData(form);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "actions/modifierParcours.php", true);
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            alert("Modifications enregistrées");
+            location.reload(); // Recharger la page pour afficher les modifications
+        }
+    };
+    xhr.send(formData);
+}
+
+function supprimerParcours(idParcours) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer ce parcours ?")) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "actions/supprimerParcours.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                alert("Parcours supprimé");
+                location.reload(); // Rechargement de la page pour actualiser l'affichage
+            }
+        }
+        xhr.send("idParcours=" + idParcours);
+    }
+}
+function creerParcours(event) {
+    event.preventDefault();
+    var form = document.getElementById('formCreerParcours');
+    var formData = new FormData(form);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "actions/creerParcours.php", true);
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            alert("Parcours créé avec succès");
+            location.reload(); // Rechargement de la page
+        }
+    }
+    xhr.send(formData);
+}
+function afficherFormulaireModificationParticipant(idParticipant) {
+    var form = document.getElementById('formModifContainerParticipant_' + idParticipant);
+    form.style.display = form.style.display === 'block' ? 'none' : 'block';
+}
+function modifierParticipant(event, idParticipant) {
+    event.preventDefault(); // Empêcher la soumission standard du formulaire
+
+    var form = document.querySelector('.js__formParticipant' + idParticipant);
+    if (!form) {
+        console.error('Le formulaire n\'a pas été trouvé pour le participant avec l\'ID:', idParticipant);
+        return;
+    }
+
+    var formData = new FormData(form);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "actions/modifierParticipant.php", true);
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            alert("Modifications enregistrées");
+            location.reload(); // Recharger la page pour afficher les modifications
+        }
+    };
+    xhr.send(formData);
+}
+
