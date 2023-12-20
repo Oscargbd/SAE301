@@ -221,6 +221,7 @@ button {
  .bodyindex {
     margin: 0;
     padding: 0;
+    margin-top: 10px;
 }
 
 header {
@@ -314,6 +315,7 @@ header {
     border-radius: 40px;
     cursor: pointer;
     z-index: 3; 
+    text-decoration: none;
 }
 
 
@@ -366,6 +368,7 @@ header {
     margin-top: 20px;
     width: 80%;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .rectangle {
@@ -404,6 +407,20 @@ header {
 
     .bouton-inscription{
         font-size: 11px;
+    }
+}
+
+@media (max-width: 670px){
+
+    .image-container{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .img-index {
+        width: 100%;
+        height: 35vw;
+        object-fit: cover;
     }
 }
 
@@ -798,4 +815,55 @@ div[id^='formModif_'] {
     background-color: #f9f9f9;
     padding: 20px;
     margin-top: 10px;
+}
+
+
+/*-------------------
+        footer 
+--------------------*/
+
+footer {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-image: url('../images/flocon5.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    color: white;
+    width: 98%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 3px;
+}
+
+.logofooter{
+    width: 80px;
+    margin-top: 20px;
+
+}
+
+.rec-reseau{
+    width: 98%;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin: 10px;
+    background-color: white;
+    color: black;
+    
+}
+
+.reseau{
+    text-decoration: none;
+    color: #000;
+   margin: -22px;
+}
+
+.separateur-footer{
+    border-top: 3px groove black;
+    margin: 10px auto;
+    width: 83%;
+    text-align: center; 
 }
