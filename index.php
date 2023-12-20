@@ -11,7 +11,7 @@
 <body class="bodyindex">
 
     <?php
-    // include('includes/navbar.php');
+    include('includes/navbar.php');
     ?>
     <main class="mainIndex">
 
