@@ -315,6 +315,7 @@ header {
     border-radius: 40px;
     cursor: pointer;
     z-index: 3; 
+    text-decoration: none;
 }
 
 
@@ -408,11 +409,17 @@ header {
     }
 }
 
-@media (max-width: 1000px){
+@media (max-width: 670px){
 
     .image-container{
-        width: 400px;
         flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .img-index {
+        width: 100%;
+        height: 35vw;
+        object-fit: cover;
     }
 }
 
