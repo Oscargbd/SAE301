@@ -27,7 +27,7 @@ $trails = $trailManager->getTrails();
 <body class="bodyindex">
 
     <?php
-    include('includes/navbar.php');
+    // include('includes/navbar.php');
     ?>
 
     <main>
@@ -37,30 +37,30 @@ $trails = $trailManager->getTrails();
             <?php foreach ($trails as $trail) : ?>
                 <div class="block_poo">
                     <!-- Afficher l'image du parcours -->
-                    <div>
+                    <div class="contenaire-img-poo">
                         <img class="img-poo" src="<?= htmlspecialchars($trail->getParcours()->getCheminImage()); ?>" alt="Image du parcours">
                     </div>
-                    <div class="txt-poo">
+                    <div class="contenaire-txt-poo">
                         <!-- Afficher les informations du trail -->
-                        <div><?= htmlspecialchars($trail->getNom()); ?></div>
+                        <div><h3 class="h3-poo"><?= htmlspecialchars($trail->getNom()); ?></h3></div>
                         <div>
-                            <p>Distance: <?= htmlspecialchars($trail->getDistance()); ?> km</p>
+                            <p class="txt-poo">Distance: <?= htmlspecialchars($trail->getDistance()); ?> km</p>
                         </div>
                         <div>
-                            <p>Heure de départ: <?= htmlspecialchars($trail->getHeureDepart()); ?></p>
+                            <p class="txt-poo">Heure de départ: <?= htmlspecialchars($trail->getHeureDepart()); ?></p>
                         </div>
 
                         <!-- Afficher les informations du référent -->
                         <div>
-                            <p>Nom: <?= htmlspecialchars($trail->getReferent()->getNom()); ?></p>
+                            <p class="txt-poo">Nom: <?= htmlspecialchars($trail->getReferent()->getNom()); ?></p>
                         </div>
                         <div>
-                            <p>Contact: <?= htmlspecialchars($trail->getReferent()->getContact()); ?></p>
+                            <p class="txt-poo">Contact: <?= htmlspecialchars($trail->getReferent()->getContact()); ?></p>
                         </div>
                     </div>
                     <div class="btn_poo">
                         <form method='post' action='reservation.php?id=3'>
-                            <label>Participants :</label>
+                            <label class="txt-poo-2">Participants :</label>
                             <input type='number' name='nbParticipants' min='1' max='20' value='1'>
                             <input class='validBleu' type='submit' value='Réserver'>
                         </form>
