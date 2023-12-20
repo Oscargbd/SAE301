@@ -633,3 +633,169 @@ POO - Parcours
     transition-duration: .2s;
 }
 
+
+/* Style de la page Admin */
+h1#h1Admin {
+    margin-top: -9vw;
+}
+h3#h3Admin {
+    text-align: center;
+}
+h2#h2Admin {
+    text-align: center;
+}
+.hrAdmin {
+    height: 0.1vw;
+    background-color: rgb(221, 221, 221);
+    border: none;
+    width: 60vw;
+    border-radius: 30vw;
+    margin-top: 2.5vw;
+}
+.tab {
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.tab button {
+    background-color: inherit;
+    align-items: center;  
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 15em;
+    border: solid 3px #000;
+    margin-right: 5%;
+    border-radius: 30px;
+    transition: 0.3s;
+    color: rgb(0, 0, 0);
+}
+
+.tab button:hover {
+    background-color: #107ca6;
+    color: rgb(255, 255, 255);
+    border: #107ca6;
+}
+
+/* Style du contenu des onglets */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+/* Style des formulaires */
+#formCreerUtilisateur {
+    background-color: rgb(255, 255, 255);
+    width: 30em;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    margin: auto;
+}
+
+#formCreerUtilisateur input[type=text], input[type=email], input[type=password], input[type=number], select {
+    width: 100%;
+    font-family: Lufga;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+.js__formAdmin, input[type=text], input[type=email], input[type=number], select {
+    width: 100%;
+    font-family: Lufga;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box; 
+}
+
+#formCreerUtilisateur input[type=submit] {
+    width: 100%;
+    font-family: Lufga;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: solid 3px #000;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.js__formAdmin, input[type=submit] {
+    width: 100%;
+    font-family: Lufga;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: solid 3px #000;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#formCreerUtilisateur input[type=submit]:hover {
+    background-color: #107ca6;
+    color: rgb(255, 255, 255);
+    border:solid 3px  #107ca6;
+    transition: 0.3s;
+}
+.js__formAdmin, input[type=submit]:hover {
+    background-color: #107ca6;
+    color: rgb(255, 255, 255);
+    border:solid 3px  #107ca6;
+    transition: 0.3s;  
+}
+/* Style des tables */
+table {
+    width: 100%;
+    border-collapse:inherit;
+    border: solid 3px #000;
+    border-radius: 30px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: none;
+    
+}
+
+th {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+}
+
+tr:nth-child(even) {
+    background-color: #d0d0d0;
+}
+
+/* Boutons d'action dans les tables */
+tr button {
+    background-color: #107ca6;
+    color: white;
+    padding: 6px 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+tr button:hover {
+    background-color: #0d6284;
+}
+
+/* Style des formulaires de modification (cachés par défaut) */
+div[id^='formModif_'] {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 10px;
+}

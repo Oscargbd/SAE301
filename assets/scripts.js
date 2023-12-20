@@ -14,7 +14,15 @@ function openTab(evt, tabName) {
 
 function afficherFormulaireModification(idUtilisateur) {
     var form = document.getElementById('formModif_' + idUtilisateur);
-    form.style.display = 'block';
+
+    // Vérifie si le formulaire est déjà affiché
+    if (form.style.display === 'block') {
+        // Si oui, le cacher
+        form.style.display = 'none';
+    } else {
+        // Sinon, l'afficher
+        form.style.display = 'block';
+    }
 }
 
 function modifierUtilisateur(event, idUtilisateur) {
@@ -84,4 +92,20 @@ function supprimerUtilisateur(idUtilisateur) {
         }
         xhr.send("idUtilisateur=" + idUtilisateur);
     }
+}
+
+function creerUtilisateur(event) {
+    event.preventDefault();
+    var form = document.getElementById('formCreerUtilisateur');
+    var formData = new FormData(form);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "actions/creerUtilisateur.php", true);
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            alert("Utilisateur créé avec succès");
+            location.reload();
+        }
+    }
+    xhr.send(formData);
 }
