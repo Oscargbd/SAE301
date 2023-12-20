@@ -533,7 +533,8 @@ hr {
 }
 
 #message-form input:last-of-type {
-    width: 15vw;
+    width: fit-content;
+    height: fit-content;
     align-items: center;
 }
 /*-------------------------------

@@ -87,8 +87,8 @@
         }
 
         ?>
-        <a href="actions/logoutAction.php">Déconnexion</a> <!-- Bouton de déconnexion qui fonctionne avec le script logoutAction.php -->
-        <a href="actions/deleteAction.php">Supprimer mon compte</a> <!-- Bouton de suppression de compte qui fonctionne avec le script signupAction.php -->
+        <a href="actions/logoutAction.php"><button class="bouton-info">Déconnexion</button></a> <!-- Bouton de déconnexion qui fonctionne avec le script logoutAction.php -->
+        <a href="actions/deleteAction.php"><button class="bouton-info">Supprimer mon compte</button></a> <!-- Bouton de suppression de compte qui fonctionne avec le script signupAction.php -->
 
         <section class='reservation'>
     <h1>Mes réservations</h1>
