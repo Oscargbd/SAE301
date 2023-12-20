@@ -3,17 +3,17 @@
 
 <?php include('includes/head.php') ?>
 
-<body class="badylogin">
+<body class="body-login">
     <?php
-    include('includes/navbar.php');
+    // include('includes/navbar.php');
     ?>
     <main class='pageLogin'>
         <div>
-            <img src="img/fondLoginPng.png">
+            <img class="img-login" src="img/fondLoginPng.png">
             <h1 class="titrelogin">Le<br> Trail des<br> glaces</h1>
         </div>
         <div class="login-form">
-        <h2>Inscrivez vous !</h2>
+        <h2 class="h2-login">Inscrivez vous !</h2>
         <form action="actions/signupaction.php" method="post">
             <label for="username">Nom d'utilisateur</label>
             <input class="inputlogin" type="text" id="username" name="username" placeholder="Votre nom d'utilisateur" required>
