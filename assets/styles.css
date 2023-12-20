@@ -194,7 +194,7 @@ button {
         font-size: 16px;
     }
 
-    /* Changer l'image de fond pour les appareils mobiles */
+    
     .body-login {
             background-image: url('../img/flocon.png');
             background-position: center;
@@ -211,6 +211,7 @@ button {
 
 
 /* page d'accueil */
+
 
 
  .div-principale{
@@ -262,7 +263,7 @@ header {
     display: flex;
     font-size: 15vw;
     margin: 0 auto;
-    
+    margin: -40px;
 }
 
 .titre-trail {
@@ -270,7 +271,7 @@ header {
 }
 
 .bouton-inscription {
-    font-size: 0.9765625vw;
+    font-size: 1.171875vw;
     position: absolute;
     bottom: 20px;
     justify-content: center;
@@ -300,11 +301,12 @@ header {
 } 
 
 .bouton-info{
-    font-size: 0.9765625vw;
+    font-size: 15px;
     margin: 20px;
+    text-align: center;
     justify-content: center;
     width: fit-content;
-    height: 3vw;
+    height: fit-content;
     border: 2px solid #000;
     background-color: transparent;
     color: #000;
@@ -354,6 +356,55 @@ header {
 
 .carte {
     border: none;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.rectangle {
+    max-width: 600px;
+    height:  26.041666666666668vw;
+    border-radius: 1.6276041666666667vw;
+    margin-right: 10px;
+    margin: 10px;
+}
+
+.square {
+    max-width: 400px;
+    height:  26.041666666666668vw;
+    border-radius: 1.6276041666666667vw;
+    margin: 10px;
+}
+
+@media (max-width: 670px) {
+
+    h2{
+        font-size: 25px;
+    }
+
+    h3{
+        font-size: 20px;
+    }
+
+    .titre-glaces{
+        font-size: 80px;
+        margin: -30px;
+    }
+
+    .bouton-info{
+        font-size: 13px;
+    }
+
+    .bouton-inscription{
+        font-size: 11px;
+    }
 }
 
 /*-------------------------------
@@ -427,30 +478,7 @@ hr {
     margin-left: 8.333333333333334vw;
 }
 
-.image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    width: 80%;
-    margin: auto;
-}
 
-.rectangle {
-    max-width: 600px;
-    height:  26.041666666666668vw;
-    border-radius: 1.6276041666666667vw;
-    margin-right: 10px;
-    margin: 10px;
-}
-
-.square {
-    max-width: 400px;
-    height:  26.041666666666668vw;
-    border-radius: 1.6276041666666667vw;
-    margin: 10px;
-}
 
 /*-------------------------------
                 FAQ
