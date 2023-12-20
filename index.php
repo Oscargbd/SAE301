@@ -101,6 +101,15 @@
             <img class="rectangle img-index" src="images/galerie img2.jpg" alt="">
 
         </div>
+
+        <footer>
+
+            <?php
+            include('includes/footer.php');
+            ?>
+
+        </footer>
+
     </main>
 </body>
 
