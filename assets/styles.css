@@ -168,11 +168,18 @@ button {
     height: 42px;
     width: 100%;
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: 70px;
     border: none;
     background-color: black;
     color: white;
     margin-top: 5px;
+}
+
+button:hover{
+    transition-duration: .2s;
+    background-color: #007ca6;
+    color: white;
+    border-color: transparent;
 }
 
 .login-form p {
