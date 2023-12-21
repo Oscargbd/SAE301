@@ -26,13 +26,13 @@
         <h1 class='hautPage'>Mon compte</h1>
         <?php
         if (isset($_SESSION["username"])) {
-            echo "<p class='texteCompte' >Votre pseudo actuel : " . $_SESSION["username"] . "</p>
+            echo "<div class='ensembleCompte'><p class='texteCompte' >Votre pseudo actuel : <strong>" . $_SESSION["username"] . "</strong></p>
         <form class='formCompte'method='post' action=''>
             <input type='text' name='changePseudo' placeholder='Modifier mon pseudo' required />
             <input type='submit' name='validerPseudo' value='Modifier'/>
         </form>";
 
-            echo "<p class='texteCompte'>Votre adresse e-mail actuelle : " . $_SESSION["email"] . "</p>
+            echo "<p class='texteCompte'>Votre adresse e-mail actuelle : <strong>" . $_SESSION["email"] . "</strong></p>
         <form class='formCompte' method='post' action=''>
             <input class='boutonCompte' type='email' name='changeEmail' placeholder='Modifier mon adresse e-mail' required />
             <input type='submit' name='validerEmail' value='Modifier'/>
@@ -89,7 +89,7 @@
         ?>
         <a href="actions/logoutAction.php"><button class="bouton-info">Déconnexion</button></a> <!-- Bouton de déconnexion qui fonctionne avec le script logoutAction.php -->
         <a href="actions/deleteAction.php"><button class="bouton-info">Supprimer mon compte</button></a> <!-- Bouton de suppression de compte qui fonctionne avec le script signupAction.php -->
-
+    </div>
         <section class='reservation'>
     <h1>Mes réservations</h1>
     <?php
@@ -119,7 +119,7 @@
             }
 
             // Afficher les détails du participant
-            echo "<ul>";
+            echo "<ul class='ensembleReservation'>";
             foreach ($reservation as $key => $value) {
                 // Ignorer les colonnes non liées aux participants
                 if (strpos($key, 'nomParticipant') === 0) {
@@ -141,10 +141,7 @@
                 }
             }
             echo "</ul>";
-        }
-
-        // Fermez la section réservation
-        echo "</section>";
+        } 
     } else {
         // Si le compte n'a pas de réservations
         echo "<p>Vous n'avez aucune réservation.</p>";
