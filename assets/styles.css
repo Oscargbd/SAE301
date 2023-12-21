@@ -811,6 +811,18 @@ h2#h2Admin {
     border:solid 3px  #107ca6;
     transition: 0.3s;  
 }
+
+.formCompte input{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.texteCompte{
+    margin-left: 15px;
+}
+
 /* Style des tables */
 table {
     width: 100%;
@@ -850,6 +862,7 @@ tr button {
 tr button:hover {
     background-color: #0d6284;
 }
+
 
 /* Style des formulaires de modification (cachés par défaut) */
 div[id^='formModif_'] {

@@ -26,15 +26,15 @@
         <h1 class='hautPage'>Mon compte</h1>
         <?php
         if (isset($_SESSION["username"])) {
-            echo "<p>Votre pseudo actuel : " . $_SESSION["username"] . "</p>
-        <form method='post' action=''>
+            echo "<p class='texteCompte' >Votre pseudo actuel : " . $_SESSION["username"] . "</p>
+        <form class='formCompte'method='post' action=''>
             <input type='text' name='changePseudo' placeholder='Modifier mon pseudo' required />
             <input type='submit' name='validerPseudo' value='Modifier'/>
         </form>";
 
-            echo "<p>Votre adresse e-mail actuelle : " . $_SESSION["email"] . "</p>
-        <form method='post' action=''>
-            <input type='email' name='changeEmail' placeholder='Modifier mon adresse e-mail' required />
+            echo "<p class='texteCompte'>Votre adresse e-mail actuelle : " . $_SESSION["email"] . "</p>
+        <form class='formCompte' method='post' action=''>
+            <input class='boutonCompte' type='email' name='changeEmail' placeholder='Modifier mon adresse e-mail' required />
             <input type='submit' name='validerEmail' value='Modifier'/>
         </form>";
         } else {
