@@ -54,19 +54,19 @@
             <div class="carte">
                 <i><img src="images/icon/Fichier 6.png" alt=""></i>
                 <h3>14 décembre 2024</h3>
-                <p></p>
+                <p>Rejoignez-nous pour une aventure hivernale inoubliable le 14 décembre 2024 ! Marquez vos calendriers et préparez-vous à affronter le froid en compagnie d'autres passionnés de course à pied. Le Trail des Glaces vous promet une expérience exceptionnelle, alliant sport et paysages enneigés à couper le souffle.</p>
             </div>
 
             <div class="carte">
                 <i><img src="images/icon/Fichier 5.png" alt=""></i>
                 <h3>18H</h3>
-                <p></p>
+                <p>Le coup d'envoi de cette expérience glaciaire sera donné à 18h précises. Soyez prêts à vous élancer sous les étoiles naissantes de l'hiver pour une course qui éveillera tous vos sens. Lampe frontale en tête et détermination au cœur, chaque pas vous rapprochera de la ligne d'arrivée.</p>
             </div>
 
             <div class="carte">
                 <i><img src="images/icon/Fichier 7.png" alt=""></i>
-                <h3>Les Estables, 43260</h3>
-                <p></p>
+                <h3>Les Estables, 43150</h3>
+                <p>Les Estables, 43260, est le théâtre de notre Trail des Glaces. Ce village pittoresque, niché au cœur de la nature, offre le décor parfait pour notre évènement. Venez découvrir ses paysages enneigés et ses sentiers qui s'étendent comme un défi à la conquête des coureurs.</p>
             </div>
         </div>
         <div class="bouton-container">
