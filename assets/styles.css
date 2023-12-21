@@ -359,6 +359,7 @@ header {
 }
 
 .texteIndex p {
+    width: 50%;
     margin-right: 18px;
 }
 
@@ -370,6 +371,8 @@ header {
 }
 
 .ellipse1 {
+    right: -2vw;
+    position: absolute;
     width: 170px;
     float: right;
     margin-left: auto;
@@ -377,11 +380,12 @@ header {
 }
 
 .ellipse2 {
+    left: -2vw;
     position: absolute;
     width: 170px;
     float: left;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 10vw;
 }
 
 .conteneur-cartes {
