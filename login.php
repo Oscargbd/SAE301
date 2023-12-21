@@ -4,7 +4,7 @@
 <?php include('includes/head.php') ?>
 
 <body class="body-login">
-    <?php //mettre la navbar quand elle sera responsive ?>
+    <?php include ("includes/navbar.php") ?>
     <main class='pageLogin'>
         <div>
             <img class="img-login" src="img/fondLoginPng.png">

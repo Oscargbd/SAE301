@@ -5,7 +5,7 @@
 
 <body class="body-login">
     <?php
-    // include('includes/navbar.php');
+    include('includes/navbar.php');
     ?>
     <main class='pageLogin'>
         <div>

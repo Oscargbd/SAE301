@@ -32,15 +32,18 @@ body {
 ------------------------------------*/
 
 
-nav {
+.nav-all {
     display: flex;
     position: absolute;
     top: 0;
     background-color: none;
-    padding: 1vw;
-    background: linear-gradient(rgba(0, 0, 0, 0.572), rgba(255, 255, 255, 0));
+    padding: 2vw 2vw 1vw 1vw;
     width: 98%;
     z-index: 2;
+}
+
+.nav-login {
+    background: linear-gradient(rgba(0, 0, 0, 0.572), rgba(255, 255, 255, 0));
 }
 
 
