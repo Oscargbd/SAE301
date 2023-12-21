@@ -1,7 +1,7 @@
 /* ajout des polices */
 @font-face {
     font-family: lufgabold;
-    src: url(../font/LufgaBold.ttf) format('truetype'); 
+    src: url(../font/LufgaBold.ttf) format('truetype');
 }
 
 @font-face {
@@ -21,7 +21,7 @@
 
 /* modification génerale*/
 
-body{
+body {
     font-family: lufga;
     padding: 0;
     margin: 0;
@@ -31,6 +31,7 @@ body{
                 NAVBAR
 ------------------------------------*/
 
+
 nav {
     display: flex;
     position: absolute;
@@ -38,10 +39,10 @@ nav {
     background-color: none;
     padding: 1vw;
     background: linear-gradient(rgba(0, 0, 0, 0.572), rgba(255, 255, 255, 0));
-    display: flex;
     width: 98%;
     z-index: 2;
 }
+
 
 
 nav img {
@@ -73,11 +74,11 @@ nav a:not(.iconeRond) {
 }
 
 nav a.iconeRond {
-    border: none; 
+    border: none;
 }
 
 nav a:hover:not(:first-child) {
-    
+
     transition-duration: .2s;
     background-color: #007ca6;
     color: white;
@@ -85,14 +86,15 @@ nav a:hover:not(:first-child) {
 }
 
 nav a:hover:first-child {
-    background-image: url('./images/logoTDG.png'); 
+    background-image: url('./images/logoTDG.png');
     transition-duration: .2s;
 }
+
 .grow {
     flex-grow: 1;
 }
 
-h1{
+h1 {
     font-size: 6.8359375vw;
     font-family: lufgabold;
 }
@@ -102,12 +104,12 @@ h1{
     margin-inline: 6vw
 }
 
-h2{
+h2 {
     font-size: 2.9296875vw;
     font-family: lufgabold;
 }
 
-h3{
+h3 {
     font-size: 1.953125vw;
     font-family: lufgabold;
 }
@@ -123,7 +125,7 @@ h3{
     width: 60vw;
 }
 
-.titrelogin{
+.titrelogin {
     color: white;
     width: 50%;
     text-align: center;
@@ -141,9 +143,9 @@ h3{
     width: fit-content;
     text-align: left;
     margin-top: 10vw;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: 7%;
-    
+
 }
 
 label {
@@ -151,7 +153,7 @@ label {
     margin-bottom: 5px;
 }
 
-.inputlogin{
+.inputlogin {
     padding-left: 5px;
     font-family: lufga;
     height: 42px;
@@ -175,7 +177,7 @@ button {
     margin-top: 5px;
 }
 
-button:hover{
+button:hover {
     transition-duration: .2s;
     background-color: #007ca6;
     color: white;
@@ -191,8 +193,8 @@ button:hover{
     .login-form {
         margin: 10vw auto;
         padding: 5%;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-        background-color: rgba(255,255,255,0.7);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.7);
         width: 80%;
         border-radius: 20px;
     }
@@ -201,15 +203,16 @@ button:hover{
         font-size: 16px;
     }
 
-    
+
     .body-login {
-            background-image: url('../img/flocon.png');
-            background-position: center;
-            background-repeat: no-repeat;
+        background-image: url('../img/flocon.png');
+        background-position: center;
+        background-repeat: no-repeat;
 
-        }
+    }
 
-    .titrelogin, .img-login {
+    .titrelogin,
+    .img-login {
 
         visibility: hidden;
     }
@@ -221,11 +224,11 @@ button:hover{
 
 
 
- .div-principale{
+.div-principale {
     position: relative;
- }
+}
 
- .bodyindex {
+.bodyindex {
     margin: 0;
     padding: 0;
     margin-top: 10px;
@@ -261,7 +264,8 @@ header {
 
 
 
-.titre-glaces, .titre-trail {
+.titre-glaces,
+.titre-trail {
     font-family: 'lufgabold';
     color: white;
     margin: 0;
@@ -292,23 +296,24 @@ header {
     padding: 10px 20px;
     border-radius: 40px;
     cursor: pointer;
-    z-index: 3; 
+    z-index: 3;
 }
-.bouton-inscription:hover{
+
+.bouton-inscription:hover {
     transition-duration: .2s;
     background-color: #007ca6;
     color: white;
     border-color: transparent;
 }
 
-.div-explication{
-    width: 83%; 
+.div-explication {
+    width: 83%;
     margin: auto;
     text-align: justify;
-   
-} 
 
-.bouton-info{
+}
+
+.bouton-info {
     font-size: 15px;
     margin: 20px;
     text-align: center;
@@ -321,12 +326,12 @@ header {
     padding: 10px 20px;
     border-radius: 40px;
     cursor: pointer;
-    z-index: 3; 
+    z-index: 3;
     text-decoration: none;
 }
 
 
-.bouton-info:hover{
+.bouton-info:hover {
     transition-duration: .2s;
     background-color: #007ca6;
     color: white;
@@ -337,22 +342,22 @@ header {
     border-top: 3px groove black;
     margin: 10px auto;
     width: 83%;
-    text-align: center; 
+    text-align: center;
 }
 
 .conteneur-cartes {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .carte {
     text-align: center;
-    padding: 2%; 
-    margin: 2%; 
-    width: calc(33.33% - 20px); 
-    max-width: 300px; 
+    padding: 2%;
+    margin: 2%;
+    width: calc(33.33% - 20px);
+    max-width: 300px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -360,7 +365,7 @@ header {
 
 .carte i {
     font-size: 4vw;
-    margin-bottom: 2%; 
+    margin-bottom: 2%;
 }
 
 .carte {
@@ -380,7 +385,7 @@ header {
 
 .rectangle {
     max-width: 600px;
-    height:  26.041666666666668vw;
+    height: 26.041666666666668vw;
     border-radius: 1.6276041666666667vw;
     margin-right: 10px;
     margin: 10px;
@@ -388,38 +393,38 @@ header {
 
 .square {
     max-width: 400px;
-    height:  26.041666666666668vw;
+    height: 26.041666666666668vw;
     border-radius: 1.6276041666666667vw;
     margin: 10px;
 }
 
 @media (max-width: 670px) {
 
-    h2{
+    h2 {
         font-size: 25px;
     }
 
-    h3{
+    h3 {
         font-size: 20px;
     }
 
-    .titre-glaces{
+    .titre-glaces {
         font-size: 80px;
         margin: -30px;
     }
 
-    .bouton-info{
+    .bouton-info {
         font-size: 13px;
     }
 
-    .bouton-inscription{
+    .bouton-inscription {
         font-size: 11px;
     }
 }
 
-@media (max-width: 670px){
+@media (max-width: 670px) {
 
-    .image-container{
+    .image-container {
         flex-direction: column;
         flex-wrap: nowrap;
     }
@@ -470,7 +475,7 @@ hr {
     align-items: center;
 }
 
-#message-form input{
+#message-form input {
     width: 40vw;
 }
 
@@ -488,17 +493,17 @@ hr {
 
 @media screen and (max-width: 768px) {
     .carte {
-        width: calc(50% - 20px); 
+        width: calc(50% - 20px);
     }
 }
 
 @media screen and (max-width: 480px) {
     .carte {
-        width: calc(100% - 20px); 
+        width: calc(100% - 20px);
     }
 }
 
-.titresectionphoto{
+.titresectionphoto {
     margin-left: 8.333333333333334vw;
 }
 
@@ -535,7 +540,7 @@ hr {
     align-items: center;
 }
 
-#message-form input{
+#message-form input {
     width: 40vw;
 }
 
@@ -544,6 +549,7 @@ hr {
     height: fit-content;
     align-items: center;
 }
+
 /*-------------------------------
             Billetterie
 --------------------------------*/
@@ -622,7 +628,7 @@ POO - Parcours
     width: 20vw;
 }
 
-@media (max-width: 670px){
+@media (max-width: 670px) {
 
     .contenaire_poo {
         flex-direction: column;
@@ -674,14 +680,15 @@ POO - Parcours
 /* PAGE ADMIN */
 .tablinks {
     cursor: pointer;
-   }
-   .tabcontent {
-       display: none;
-   }
-   
-   .tablinks.active .tabcontent {
-       display: block;
-   }
+}
+
+.tabcontent {
+    display: none;
+}
+
+.tablinks.active .tabcontent {
+    display: block;
+}
 
 .validParticip {
     font-size: 1.4vw;
@@ -704,12 +711,15 @@ POO - Parcours
 h1#h1Admin {
     margin-top: -9vw;
 }
+
 h3#h3Admin {
     text-align: center;
 }
+
 h2#h2Admin {
     text-align: center;
 }
+
 .hrAdmin {
     height: 0.1vw;
     background-color: rgb(221, 221, 221);
@@ -718,6 +728,7 @@ h2#h2Admin {
     border-radius: 30vw;
     margin-top: 2.5vw;
 }
+
 .tab {
     overflow: hidden;
     background-color: #ffffff;
@@ -727,7 +738,7 @@ h2#h2Admin {
 
 .tab button {
     background-color: inherit;
-    align-items: center;  
+    align-items: center;
     float: left;
     border: none;
     outline: none;
@@ -763,7 +774,11 @@ h2#h2Admin {
     margin: auto;
 }
 
-#formCreerUtilisateur input[type=text], input[type=email], input[type=password], input[type=number], select {
+#formCreerUtilisateur input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+select {
     width: 100%;
     font-family: Lufga;
     padding: 10px;
@@ -773,7 +788,12 @@ h2#h2Admin {
     border-radius: 30px;
     box-sizing: border-box;
 }
-.js__formAdmin, input[type=text], input[type=email], input[type=number], select {
+
+.js__formAdmin,
+input[type=text],
+input[type=email],
+input[type=number],
+select {
     width: 100%;
     font-family: Lufga;
     padding: 10px;
@@ -781,7 +801,7 @@ h2#h2Admin {
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 30px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 #formCreerUtilisateur input[type=submit] {
@@ -795,7 +815,9 @@ h2#h2Admin {
     border-radius: 30px;
     cursor: pointer;
 }
-.js__formAdmin, input[type=submit] {
+
+.js__formAdmin,
+input[type=submit] {
     width: 100%;
     font-family: Lufga;
     background-color: #ffffff;
@@ -806,43 +828,47 @@ h2#h2Admin {
     border-radius: 30px;
     cursor: pointer;
 }
+
 #formCreerUtilisateur input[type=submit]:hover {
     background-color: #107ca6;
     color: rgb(255, 255, 255);
-    border:solid 3px  #107ca6;
+    border: solid 3px #107ca6;
     transition: 0.3s;
 }
-.js__formAdmin, input[type=submit]:hover {
+
+.js__formAdmin,
+input[type=submit]:hover {
     background-color: #107ca6;
     color: rgb(255, 255, 255);
-    border:solid 3px  #107ca6;
-    transition: 0.3s;  
+    border: solid 3px #107ca6;
+    transition: 0.3s;
 }
 
-.formCompte input{
+.formCompte input {
     width: 300px;
     display: flex;
     flex-direction: column;
     margin-left: 20px;
 }
 
-.texteCompte{
+.texteCompte {
     margin-left: 15px;
 }
 
 /* Style des tables */
 table {
     width: 100%;
-    border-collapse:inherit;
+    border-collapse: inherit;
     border: solid 3px #000;
     border-radius: 30px;
 }
 
-th, td {
+th,
+td {
     text-align: left;
     padding: 8px;
     border: none;
-    
+
 }
 
 th {
@@ -889,7 +915,7 @@ footer {
     margin-bottom: 15px;
     background-image: url('../images/flocon5.png');
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     color: white;
     width: 98%;
     height: auto;
@@ -900,13 +926,13 @@ footer {
     padding-bottom: 3px;
 }
 
-.logofooter{
+.logofooter {
     width: 80px;
     margin-top: 20px;
 
 }
 
-.rec-reseau{
+.rec-reseau {
     width: 98%;
     margin: 0 auto;
     border-radius: 20px;
@@ -914,18 +940,114 @@ footer {
     margin: 10px;
     background-color: white;
     color: black;
-    
+
 }
 
-.reseau{
+.reseau {
     text-decoration: none;
     color: #000;
-   margin: -22px;
+    margin: -22px;
 }
 
-.separateur-footer{
+.separateur-footer {
     border-top: 3px groove black;
     margin: 10px auto;
     width: 83%;
-    text-align: center; 
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sidenav menu */
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -250px;
+    background-color: #e8e8e8;
+    padding-top: 60px;
+    transition: left 0.5s ease;
+}
+
+/* Sidenav menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #111;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Active class */
+.sidenav.active {
+    left: 0;
+}
+
+/* Close btn */
+.sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+/* Icône burger */
+.burger-icon span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+/* Cache le menu burger par défaut */
+#mySidenav,
+#openBtn {
+    display: none;
+}
+
+/* Affiche le menu burger sur les petits écrans */
+@media screen and (max-width: 670px) {
+    #contenaire_lapotop_navbar {
+        display: none;
+    }
+
+    #mySidenav, #openBtn {
+        display: block;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: -250px;
+        background-color: #e8e8e8;
+        padding-top: 60px;
+        transition: left 0.5s ease;
+    }
 }

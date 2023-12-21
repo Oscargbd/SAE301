@@ -33,15 +33,15 @@ function modifierUtilisateur(event, idUtilisateur) {
         console.error('Le formulaire n\'a pas été trouvé pour l\'utilisateur avec l\'ID:', idUtilisateur);
         return;
     }
-  
+
     var formData = new FormData(form);
     for (let [key, value] of formData.entries()) {
         console.log(key, value);
     }
-    
+
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "actions/modifierUtilisateur.php", true);
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             alert("Modifications enregistrées");
             location.reload(); // Rechargement de la page qui permet l'actualisation de l'affichage des données
@@ -52,7 +52,7 @@ function modifierUtilisateur(event, idUtilisateur) {
 
 //fonction pour masque l'img de fond de login
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const imageContainer = document.querySelector('.pageLogin > div'); // Conteneur de l'image
     let imageExists = true; // Flag pour vérifier si l'image existe dans le DOM
 
@@ -84,7 +84,7 @@ function supprimerUtilisateur(idUtilisateur) {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "actions/supprimerUtilisateur.php", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function() {
+        xhr.onreadystatechange = function () {
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                 alert("Utilisateur supprimé");
                 location.reload();// Rechargement de la page qui permet l'actualisation de l'affichage des données
@@ -101,7 +101,7 @@ function creerUtilisateur(event) {
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "actions/creerUtilisateur.php", true);
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             alert("Utilisateur créé avec succès");
             location.reload();
@@ -118,7 +118,7 @@ function modifierParcours(event, idParcours) {
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "actions/modifierParcours.php", true);
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             alert("Modifications enregistrées");
             location.reload(); // Recharger la page pour afficher les modifications
@@ -132,7 +132,7 @@ function supprimerParcours(idParcours) {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "actions/supprimerParcours.php", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function() {
+        xhr.onreadystatechange = function () {
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                 alert("Parcours supprimé");
                 location.reload(); // Rechargement de la page pour actualiser l'affichage
@@ -148,7 +148,7 @@ function creerParcours(event) {
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "actions/creerParcours.php", true);
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             alert("Parcours créé avec succès");
             location.reload(); // Rechargement de la page
@@ -172,7 +172,7 @@ function modifierParticipant(event, idParticipant) {
     var formData = new FormData(form);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "actions/modifierParticipant.php", true);
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             alert("Modifications enregistrées");
             location.reload(); // Recharger la page pour afficher les modifications
@@ -180,4 +180,30 @@ function modifierParticipant(event, idParticipant) {
     };
     xhr.send(formData);
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var sidenav = document.getElementById("mySidenav");
+    var openBtn = document.getElementById("openBtn");
+    var closeBtn = document.getElementById("closeBtn");
+
+    openBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        openNav();
+    });
+
+    closeBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        closeNav();
+    });
+
+    function openNav() {
+        sidenav.classList.add("active");
+    }
+
+    function closeNav() {
+        sidenav.classList.remove("active");
+    }
+});
 
