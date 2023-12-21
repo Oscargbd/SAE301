@@ -12,7 +12,7 @@ require('includes/database.php');
     </a>
     <a href="index.php">Accueil</a>
     <a href="parcours.php">Parcours</a>
-    <a href="faq.php">FAQ</a>
+    <a href="faq.php">Discussion</a>
     <div class="grow"></div>
     <a class="iconeRond"><img src="./images/union.png" alt="icone search bar" class="loupe"></a>
     <?php if (isset($_SESSION["username"])) {     // Si l'utilisateur est connecté, il a accès à son compte, sinon il y a un bouton d'inscription

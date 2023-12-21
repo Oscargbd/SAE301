@@ -222,4 +222,18 @@ function creerParticipant(event) {
     };
     xhr.send(formData);
 }
+function supprimerMessageChat(idChat) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer ce message ?")) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "actions/supprimerMessageChat.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                alert("Message supprimé");
+                location.reload();
+            }
+        };
+        xhr.send("idChat=" + idChat);
+    }
+}
 
