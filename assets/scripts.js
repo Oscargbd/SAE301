@@ -193,6 +193,8 @@ function modifierParticipant(event, idParticipant) {
     xhr.send(formData);
 }
 
+//fonction menu burger
+
 document.addEventListener('DOMContentLoaded', function () {
     var sidenav = document.getElementById("mySidenav");
     var openBtn = document.getElementById("openBtn");
