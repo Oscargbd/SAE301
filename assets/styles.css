@@ -333,6 +333,15 @@ header {
     border-color: transparent;
 }
 
+.texteIndex {
+    display: flex;
+    flex-direction: row; 
+}
+
+.texteIndex p {
+    margin-right: 18px; 
+}
+
 .separateur {
     border-top: 3px groove black;
     margin: 10px auto;
@@ -415,6 +424,16 @@ header {
     .bouton-inscription{
         font-size: 11px;
     }
+
+    .texteIndex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .texteIndex p {
+        margin-right: 0px; 
+    }
+    
 }
 
 @media (max-width: 670px){
