@@ -22,7 +22,7 @@ $trails = $trailManager->getTrails();
     <title>Le Trail des Glaces</title>
 </head>
 
-<body class="bodyindex">
+<body>
 
     <?php
     include('includes/navbar.php');

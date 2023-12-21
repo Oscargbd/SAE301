@@ -2,7 +2,6 @@
 
 // Démarre la session
 session_start();
-// fjhffbhg
 // Connexion à la base de données
 require('includes/database.php');
 ?>
