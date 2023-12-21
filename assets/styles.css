@@ -242,13 +242,21 @@ header {
     text-align: center;
 }
 
-.background-image img {
+.background-image img:not(#flecheBas) {
     width: 98%;
     height: auto;
     display: block;
     filter: brightness(0.6);
     border-radius: 20px;
     margin: 0 auto;
+}
+
+#flecheBas {
+    width: 7vw;
+    position: absolute;
+    top: 37vw;
+    left: 90vw;
+    cursor: pointer;
 }
 
 .centered-text {
@@ -280,12 +288,9 @@ header {
 
 .bouton-inscription {
     font-size: 1.171875vw;
-    position: absolute;
-    bottom: 20px;
     justify-content: center;
     width: fit-content;
     height: fit-content;
-    right: 30px;
     border: 2px solid #000;
     background-color: white;
     color: #000;

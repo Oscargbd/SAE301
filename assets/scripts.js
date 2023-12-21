@@ -1,3 +1,15 @@
+// Fonction qui fait dérouler la page au clic sur la flèche
+let flecheBas = document.getElementById('flecheBas');
+function scrollFleche() {
+    window.scrollTo({
+        top: 700,
+        left: 0,
+        behavior: "smooth"
+    });
+}
+flecheBas.addEventListener('click', scrollFleche);
+
+
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");

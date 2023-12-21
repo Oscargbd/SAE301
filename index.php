@@ -21,11 +21,11 @@
                 <div class="centered-text">
                     <p class="titre-trail">Le trail des </p>
                     <p class="titre-glaces">glaces</p>
-
+                    <a href="parcours.php"><button class="bouton-inscription">S'inscrire pour le Trail</button></a>
                 </div>
-
+                <img id="flecheBas" src="img/flecheBas.png">
             </div>
-            <a href="parcours.php"><button class="bouton-inscription">S'inscrire pour le Trail</button></a>
+            
         </div>
 
         <div class="div-explication">
