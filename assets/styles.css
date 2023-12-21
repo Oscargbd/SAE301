@@ -354,6 +354,21 @@ header {
     text-align: center; 
 }
 
+.ellipse1 {
+    width: 170px;
+    float: right;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.ellipse2{
+    position: absolute;
+    width: 170px;
+    float: left;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
 .conteneur-cartes {
     display: flex;
     justify-content: center;
@@ -438,10 +453,8 @@ header {
     .texteIndex p {
         margin-right: 0px; 
     }
-    
-}
 
-@media (max-width: 670px){
+    
 
     .image-container{
         flex-direction: column;
@@ -452,6 +465,18 @@ header {
         width: 100%;
         height: 35vw;
         object-fit: cover;
+    }
+}
+
+@media (max-width: 963px){
+
+    .ellipse1{
+        display: none;
+        visibility: hidden;
+    }
+    .ellipse2{
+        display: none;
+        visibility: hidden;
     }
 }
 

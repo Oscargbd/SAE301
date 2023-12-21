@@ -28,6 +28,8 @@
             
         </div>
 
+        <img class="ellipse1" src="./img/Ellipse 1.png" alt="">
+
         <div class="div-explication">
             <h2>Le trail des glaces, c'est quoi ?</h2>
             <div class="texteIndex" >
@@ -35,12 +37,15 @@
                 <p>Pour ceux privilégiant une approche plus décontractée, la Marche Polaire de 5 kilomètres offre une alternative non compétitive. Des ravitaillements stratégiquement situés et des goodies exclusifs contribueront à l'expérience des participants, créant des souvenirs mémorables de cette journée. L'événement sera animé par une atmosphère festive, de la musique et des animations.</p>
             </div>
             
+            
+            
+            
             <div class="bouton-container">
                 <a href="parcours.php"><button class="bouton-info">En savoir plus</button></a>
             </div>
 
         </div>
-
+<img class="ellipse2" src="./img/Ellipse 2.png" alt="">
 
 
         <div class="separateur"></div>
