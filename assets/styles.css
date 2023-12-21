@@ -255,18 +255,13 @@ header {
 }
 
 #flecheBas {
-    width: 6vw;
+    width: 7vw;
     position: absolute;
     top: 37vw;
     left: 90vw;
     cursor: pointer;
 }
 
-#flecheBas:hover {
-    transform: scale(1.1);
-    transform: rotate(360deg);
-    transition: 0.5s;
-}
 .centered-text {
     position: absolute;
     top: 50%;

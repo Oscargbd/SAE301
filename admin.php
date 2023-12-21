@@ -245,18 +245,18 @@
         ?>
     </div>
     <div id="Chats" class="tabcontent">
-        <h3 class="h3Admin">Gestion des Chats</h3>
-        <?php
-        $sql = "SELECT c.idChat, c.message, c.timestamp, u.username 
+    <h3 class="h3Admin">Gestion des Chats</h3>
+    <?php
+    $sql = "SELECT c.idChat, c.message, c.timestamp, u.username 
             FROM chat c
             JOIN utilisateur u ON c.user_id = u.idUtilisateur
             ORDER BY c.timestamp DESC";
-        $result = $bdd->query($sql);
+    $result = $bdd->query($sql);
 
-        if ($result && $result->rowCount() > 0) {
-            echo "<table><tr><th>ID</th><th>Utilisateur</th><th>Message</th><th>Timestamp</th><th>Actions</th></tr>";
-            while ($row = $result->fetch()) {
-                echo "<tr>
+    if ($result && $result->rowCount() > 0) {
+        echo "<table><tr><th>ID</th><th>Utilisateur</th><th>Message</th><th>Timestamp</th><th>Actions</th></tr>";
+        while ($row = $result->fetch()) {
+            echo "<tr>
                     <td>" . htmlspecialchars($row["idChat"]) . "</td>
                     <td>" . htmlspecialchars($row["username"]) . "</td>
                     <td>" . htmlspecialchars($row["message"]) . "</td>
@@ -265,13 +265,13 @@
                         <button onclick='supprimerMessageChat(" . htmlspecialchars($row["idChat"]) . ")'>Supprimer</button>
                     </td>
                   </tr>";
-            }
-            echo "</table>";
-        } else {
-            echo "<p>Aucun message de chat trouvé.</p>";
         }
-        ?>
-    </div>
+        echo "</table>";
+    } else {
+        echo "<p>Aucun message de chat trouvé.</p>";
+    }
+    ?>
+</div>
 
 </body>
 
