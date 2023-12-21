@@ -98,19 +98,123 @@
     </div>
 
     <div id="Parcours" class="tabcontent">
-        <!-- Contenu pour la gestion des parcours -->
+        <?php
+        include("POO/trailManager.php");
+        include("POO/trail.php");
+        include("POO/referent.php");
+        include("POO/parcours.php");
+
+        $trailManager = TrailManager::getInstance();
+        $trailManager->loadTrails($bdd);
+        $trails = $trailManager->getTrails();
+        ?>
+        <h3 class="h3Admin">Créer un Parcours</h3>
+        <form id="formCreerParcours" onSubmit="creerParcours(event)">
+            <input type="text" name="nom" placeholder="Nom du parcours" required>
+            <input type="number" name="distance" placeholder="Distance (km)" required>
+            <input type="time" name="heureDepart" placeholder="Heure de départ" required>
+            <select name="referentId">
+                <option value="">Choisir un référent</option>
+                <?php
+                $referents = $bdd->query("SELECT id, nom FROM referent");
+                while ($referent = $referents->fetch()) {
+                    echo "<option value=\"" . $referent['id'] . "\">" . htmlspecialchars($referent['nom']) . "</option>";
+                }
+                ?>
+            </select>
+            <input type="submit" value="Créer le parcours">
+        </form>
+        <h3 class="h3Admin">Gestion des Parcours</h3>
+        <?php foreach ($trails as $trail) : ?>
+            <div>
+                <p>Nom du Trail : <?= htmlspecialchars($trail->getNom()); ?></p>
+                <p>Distance : <?= htmlspecialchars($trail->getDistance()) . " km"; ?></p>
+                <p>Heure de départ : <?= htmlspecialchars($trail->getHeureDepart()); ?></p>
+
+                <?php
+                // Afficher les informations du référent
+                $referent = $trail->getReferent();
+                if ($referent) {
+                    echo "<p>Référent: " . htmlspecialchars($referent->getNom()) . "</p>";
+                    echo "<p>Contact du Référent: " . htmlspecialchars($referent->getContact()) . "</p>";
+                } else {
+                    echo "<p>Référent: Non assigné</p>";
+                }
+                ?>
+                <button onclick="afficherFormulaireModification(<?= $trail->getId(); ?>)">Modifier</button>
+                <div id="formModif_<?= $trail->getId(); ?>" style="display:none;">
+                    <form id="formModifParcours_<?= $trail->getId(); ?>" onsubmit="modifierParcours(event, <?= $trail->getId(); ?>)">
+                        <input type="hidden" name="id" value="<?= $trail->getId(); ?>">
+                        <input type="text" name="nom" value="<?= htmlspecialchars($trail->getNom()); ?>">
+                        <input type="number" name="distance" value="<?= htmlspecialchars($trail->getDistance()); ?>">
+                        <input type="time" name="heure" value="<?= htmlspecialchars($trail->getHeureDepart()); ?>">
+                        <input type="hidden" name="id_referent" value="<?= $referent ? $referent->getId() : ''; ?>">
+                        <select name="referentId">
+                            <?php
+                            $referents = $bdd->query("SELECT id, nom FROM referent");
+                            while ($referent = $referents->fetch()) {
+                                $selected = $referent['id'] == $trail->getReferent()->getId() ? 'selected' : '';
+                                echo "<option value=\"" . $referent['id'] . "\" $selected>" . htmlspecialchars($referent['nom']) . "</option>";
+                            }
+                            ?>
+
+                            <input type="submit" name="update_parcours" value="Enregistrer les modifications">
+                    </form>
+                </div>
+                <button onclick="supprimerParcours(<?= $trail->getId(); ?>)">Supprimer</button>
+            </div>
+        <?php endforeach; ?>
     </div>
 
     <div id="Participants" class="tabcontent">
-        <!-- Contenu pour la gestion des participants -->
-    </div>
-    <footer>
-
+        <h3 class="h3Admin">Liste des Participants</h3>
         <?php
-        include('includes/footer.php');
-        ?>
+        $sql = "SELECT p.idParticipant, p.nomParticipant, p.prenomParticipant, p.ageParticipant, u.username AS compteInscrivant, p.mailParticipant, t.nom AS trailNom 
+            FROM participant p
+            JOIN trail t ON p.idTrail = t.id
+            JOIN utilisateur u ON p.idUtilisateur = u.idUtilisateur";
+        $result = $bdd->query($sql);
 
-    </footer>
+        if ($result && $result->rowCount() > 0) {
+            echo "<table><tr><th>ID</th><th>Nom</th><th>Prénom</th><th>Âge</th><th>Compte Inscrivant</th><th>Email</th><th>Trail</th><th>Actions</th></tr>";
+            while ($row = $result->fetch()) {
+                echo "<tr>
+                    <td>" . htmlspecialchars($row["idParticipant"]) . "</td>
+                    <td>" . htmlspecialchars($row["nomParticipant"]) . "</td>
+                    <td>" . htmlspecialchars($row["prenomParticipant"]) . "</td>
+                    <td>" . htmlspecialchars($row["ageParticipant"]) . "</td>
+                    <td>" . htmlspecialchars($row["compteInscrivant"]) . "</td>
+                    <td>" . htmlspecialchars($row["mailParticipant"]) . "</td>
+                    <td>" . htmlspecialchars($row["trailNom"]) . "</td>
+                    <td>
+                        <button onclick=\"afficherFormulaireModificationParticipant(" . htmlspecialchars($row["idParticipant"]) . ")\">Modifier</button>
+                        <div id='formModifContainerParticipant_" . htmlspecialchars($row["idParticipant"]) . "' style='display:none;'>
+                            <form class='js__formParticipant" . htmlspecialchars($row["idParticipant"]) . "' onsubmit='modifierParticipant(event, " . htmlspecialchars($row["idParticipant"]) . ")'>
+                                <input type='hidden' name='idParticipant' value='" . htmlspecialchars($row["idParticipant"]) . "'>
+                                <input type='text' name='nomParticipant' value='" . htmlspecialchars($row["nomParticipant"]) . "'>
+                                <input type='text' name='prenomParticipant' value='" . htmlspecialchars($row["prenomParticipant"]) . "'>
+                                <input type='number' name='ageParticipant' value='" . htmlspecialchars($row["ageParticipant"]) . "'>
+                                <input type='email' name='emailParticipant' value='" . htmlspecialchars($row["mailParticipant"]) . "'>
+                                <select name='parcoursParticipant'>";
+                                    $parcoursSql = "SELECT id, nom FROM trail";
+                                    $parcoursResult = $bdd->query($parcoursSql);
+                                    while ($parcoursRow = $parcoursResult->fetch()) {
+                                        $selected = ($parcoursRow['trailNom'] == $row['idTrail']) ? ' selected' : '';
+                                        echo "<option value='" . htmlspecialchars($parcoursRow['id']) . "'$selected>" . htmlspecialchars($parcoursRow['nom']) . "</option>";
+                                    }
+                                echo "</select>
+                                <input type='submit' value='Enregistrer les modifications'>
+                            </form>
+                        </div>
+                    </td>                   
+                  </tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "Aucun participant trouvé.";
+        }
+        ?>
+    </div>
 
 </body>
 

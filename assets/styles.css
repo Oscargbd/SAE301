@@ -168,11 +168,18 @@ button {
     height: 42px;
     width: 100%;
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: 70px;
     border: none;
     background-color: black;
     color: white;
     margin-top: 5px;
+}
+
+button:hover{
+    transition-duration: .2s;
+    background-color: #007ca6;
+    color: white;
+    border-color: transparent;
 }
 
 .login-form p {
@@ -811,6 +818,18 @@ h2#h2Admin {
     border:solid 3px  #107ca6;
     transition: 0.3s;  
 }
+
+.formCompte input{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.texteCompte{
+    margin-left: 15px;
+}
+
 /* Style des tables */
 table {
     width: 100%;
@@ -850,6 +869,7 @@ tr button {
 tr button:hover {
     background-color: #0d6284;
 }
+
 
 /* Style des formulaires de modification (cachés par défaut) */
 div[id^='formModif_'] {

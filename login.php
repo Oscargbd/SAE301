@@ -19,7 +19,7 @@
                 <label for="password">Mot de Passe</label>
                 <input class="inputlogin" type="password" id="password" name="password" placeholder="Votre mot de passe" >
                 <br>
-                <button type="submit">Se connecter</button>
+                <button type="submit" >Se connecter</button>
             </form>
             <p>Vous n'avez pas de compte ? <a href="signup.php">Inscrivez vous</a></p>
             <div class="errorMSG">
