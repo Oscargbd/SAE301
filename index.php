@@ -23,7 +23,7 @@
                     <p class="titre-glaces">glaces</p>
                     <a href="parcours.php"><button class="bouton-inscription">S'inscrire pour le Trail</button></a>
                 </div>
-                <img id="flecheBas" src="img/flecheBas.png">
+                <img id="flecheBas" src="img/fleche.svg">
             </div>
             
         </div>
