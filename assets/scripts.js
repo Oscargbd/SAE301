@@ -193,3 +193,33 @@ function modifierParticipant(event, idParticipant) {
     xhr.send(formData);
 }
 
+function supprimerParticipant(idParticipant) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer ce participant ?")) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "actions/supprimerParticipants.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                alert("Participant supprimé");
+                location.reload(); // Rechargement de la page pour actualiser l'affichage
+            }
+        }
+        xhr.send("idParticipant=" + idParticipant);
+    }
+}
+function creerParticipant(event) {
+    event.preventDefault();
+    var form = document.getElementById('formCreerParticipant');
+    var formData = new FormData(form);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "actions/creerParticipant.php", true);
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            alert("Participant créé avec succès");
+            location.reload(); // Recharger la page pour afficher le nouveau participant
+        }
+    };
+    xhr.send(formData);
+}
+

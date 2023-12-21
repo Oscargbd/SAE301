@@ -167,47 +167,74 @@
     </div>
 
     <div id="Participants" class="tabcontent">
+        <h3 class="h3Admin">Créer un Participant</h3>
+        <form id="formCreerParticipant" onSubmit="creerParticipant(event)">
+            <input type="text" name="nomParticipant" placeholder="Nom du participant" required>
+            <input type="text" name="prenomParticipant" placeholder="Prénom du participant" required>
+            <input type="number" name="ageParticipant" placeholder="Âge" required>
+            <input type="email" name="emailParticipant" placeholder="Email du participant" required>
+            <select name="idTrail">
+                <option value="">Choisir un parcours</option>
+                <?php
+                $parcours = $bdd->query("SELECT id, nom FROM trail");
+                while ($trail = $parcours->fetch()) {
+                    echo "<option value=\"" . $trail['id'] . "\">" . htmlspecialchars($trail['nom']) . "</option>";
+                }
+                ?>
+            </select>
+            <select name="idUtilisateur">
+                <option value="">Choisir un compte inscrivant</option>
+                <?php
+                $utilisateurs = $bdd->query("SELECT idUtilisateur, username FROM utilisateur");
+                while ($utilisateur = $utilisateurs->fetch()) {
+                    echo "<option value=\"" . $utilisateur['idUtilisateur'] . "\">" . htmlspecialchars($utilisateur['username']) . "</option>";
+                }
+                ?>
+            </select>
+            <input type="submit" value="Créer le participant">
+        </form>
         <h3 class="h3Admin">Liste des Participants</h3>
         <?php
         $sql = "SELECT p.idParticipant, p.nomParticipant, p.prenomParticipant, p.ageParticipant, u.username AS compteInscrivant, p.mailParticipant, t.nom AS trailNom 
-            FROM participant p
-            JOIN trail t ON p.idTrail = t.id
-            JOIN utilisateur u ON p.idUtilisateur = u.idUtilisateur";
+        FROM participant p
+        JOIN trail t ON p.idTrail = t.id
+        JOIN utilisateur u ON p.idUtilisateur = u.idUtilisateur";
         $result = $bdd->query($sql);
 
         if ($result && $result->rowCount() > 0) {
             echo "<table><tr><th>ID</th><th>Nom</th><th>Prénom</th><th>Âge</th><th>Compte Inscrivant</th><th>Email</th><th>Trail</th><th>Actions</th></tr>";
             while ($row = $result->fetch()) {
                 echo "<tr>
-                    <td>" . htmlspecialchars($row["idParticipant"]) . "</td>
-                    <td>" . htmlspecialchars($row["nomParticipant"]) . "</td>
-                    <td>" . htmlspecialchars($row["prenomParticipant"]) . "</td>
-                    <td>" . htmlspecialchars($row["ageParticipant"]) . "</td>
-                    <td>" . htmlspecialchars($row["compteInscrivant"]) . "</td>
-                    <td>" . htmlspecialchars($row["mailParticipant"]) . "</td>
-                    <td>" . htmlspecialchars($row["trailNom"]) . "</td>
-                    <td>
-                        <button onclick=\"afficherFormulaireModificationParticipant(" . htmlspecialchars($row["idParticipant"]) . ")\">Modifier</button>
-                        <div id='formModifContainerParticipant_" . htmlspecialchars($row["idParticipant"]) . "' style='display:none;'>
-                            <form class='js__formParticipant" . htmlspecialchars($row["idParticipant"]) . "' onsubmit='modifierParticipant(event, " . htmlspecialchars($row["idParticipant"]) . ")'>
-                                <input type='hidden' name='idParticipant' value='" . htmlspecialchars($row["idParticipant"]) . "'>
-                                <input type='text' name='nomParticipant' value='" . htmlspecialchars($row["nomParticipant"]) . "'>
-                                <input type='text' name='prenomParticipant' value='" . htmlspecialchars($row["prenomParticipant"]) . "'>
-                                <input type='number' name='ageParticipant' value='" . htmlspecialchars($row["ageParticipant"]) . "'>
-                                <input type='email' name='emailParticipant' value='" . htmlspecialchars($row["mailParticipant"]) . "'>
-                                <select name='parcoursParticipant'>";
-                                    $parcoursSql = "SELECT id, nom FROM trail";
-                                    $parcoursResult = $bdd->query($parcoursSql);
-                                    while ($parcoursRow = $parcoursResult->fetch()) {
-                                        $selected = ($parcoursRow['trailNom'] == $row['idTrail']) ? ' selected' : '';
-                                        echo "<option value='" . htmlspecialchars($parcoursRow['id']) . "'$selected>" . htmlspecialchars($parcoursRow['nom']) . "</option>";
-                                    }
-                                echo "</select>
-                                <input type='submit' value='Enregistrer les modifications'>
-                            </form>
-                        </div>
-                    </td>                   
-                  </tr>";
+                <td>" . htmlspecialchars($row["idParticipant"]) . "</td>
+                <td>" . htmlspecialchars($row["nomParticipant"]) . "</td>
+                <td>" . htmlspecialchars($row["prenomParticipant"]) . "</td>
+                <td>" . htmlspecialchars($row["ageParticipant"]) . "</td>
+                <td>" . htmlspecialchars($row["compteInscrivant"]) . "</td>
+                <td>" . htmlspecialchars($row["mailParticipant"]) . "</td>
+                <td>" . htmlspecialchars($row["trailNom"]) . "</td>
+                <td>
+                    <button onclick=\"afficherFormulaireModificationParticipant(" . htmlspecialchars($row["idParticipant"]) . ")\">Modifier</button>
+                    <div id='formModifContainerParticipant_" . htmlspecialchars($row["idParticipant"]) . "' style='display:none;'>
+                        <form class='js__formParticipant" . htmlspecialchars($row["idParticipant"]) . "' onsubmit='modifierParticipant(event, " . htmlspecialchars($row["idParticipant"]) . ")'>
+                            <input type='hidden' name='idParticipant' value='" . htmlspecialchars($row["idParticipant"]) . "'>
+                            <input type='text' name='nomParticipant' value='" . htmlspecialchars($row["nomParticipant"]) . "'>
+                            <input type='text' name='prenomParticipant' value='" . htmlspecialchars($row["prenomParticipant"]) . "'>
+                            <input type='number' name='ageParticipant' value='" . htmlspecialchars($row["ageParticipant"]) . "'>
+                            <input type='email' name='emailParticipant' value='" . htmlspecialchars($row["mailParticipant"]) . "'>
+                            <select name='parcoursParticipant'>";
+                $parcoursSql = "SELECT id, nom FROM trail";
+                $parcoursResult = $bdd->query($parcoursSql);
+                while ($parcoursRow = $parcoursResult->fetch()) {
+                    $selected = ($parcoursRow['trailNom'] == $row['idTrail']) ? ' selected' : '';
+                    echo "<option value='" . htmlspecialchars($parcoursRow['id']) . "'$selected>" . htmlspecialchars($parcoursRow['nom']) . "</option>";
+                }
+                echo "</select>
+                            <input type='submit' value='Enregistrer les modifications'>
+                        </form>
+                    </div>
+                    <button onclick='supprimerParticipant(" . htmlspecialchars($row["idParticipant"]) . ")'>Supprimer</button>
+                </td>                   
+            </tr>";
             }
             echo "</table>";
         } else {
