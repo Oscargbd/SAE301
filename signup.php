@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <?php include('includes/head.php') ?>
+<title>S'inscrire</title>
 
 <body class="body-login">
     <?php

@@ -5,6 +5,7 @@
     <?php
     include('includes/head.php');
     ?>
+    <title>Page administrateur</title>
 </head>
 
 <body>

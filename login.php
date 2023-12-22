@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <?php include('includes/head.php') ?>
+<title>Se connecter</title>
 
 <body class="body-login">
     <?php include ("includes/navbar.php") ?>

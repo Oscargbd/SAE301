@@ -22,7 +22,7 @@ $trails = $trailManager->getTrails();
     ?>
     <!-- Inclusion du script JavaScript -->
     <script src="assets/scripts.js"></script>
-    <title>Le Trail des Glaces</title>
+    <title>Parcours</title>
 </head>
 
 <body>

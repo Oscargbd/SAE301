@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <?php include('includes/head.php') ?>
+<title>Réservation</title>
 
 <body>
     <?php
