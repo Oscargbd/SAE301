@@ -117,7 +117,9 @@ h3 {
     font-family: lufgabold;
 }
 
-/* page login.php */
+/*-----------------------------------
+            PAGE LOGIN
+------------------------------------*/
 
 .pageLogin {
     display: flex;
@@ -222,10 +224,9 @@ button:hover {
 }
 
 
-
-/* page d'accueil */
-
-
+/*-----------------------------------
+            PAGE D'ACCUEIL
+------------------------------------*/
 
 .div-principale {
     position: relative;
@@ -278,8 +279,6 @@ header {
     transform: translate(-50%, -50%);
     text-align: center;
 }
-
-
 
 .titre-glaces,
 .titre-trail {
@@ -434,6 +433,7 @@ header {
     height: 26.041666666666668vw;
     border-radius: 1.6276041666666667vw;
     margin: 10px;
+    object-fit: cover;
 }
 
 @media (max-width: 670px) {
@@ -545,12 +545,6 @@ hr {
     margin-left: 8.333333333333334vw;
 }
 
-
-
-/*-------------------------------
-                FAQ
---------------------------------*/
-
 .pseudoFaq strong {
     font-family: lufgablack;
     margin-right: 1vw;
@@ -588,8 +582,9 @@ hr {
     align-items: center;
 }
 
+
 /*-------------------------------
-            Billetterie
+            Billetteire
 --------------------------------*/
 
 .ensembleCard {
@@ -622,7 +617,9 @@ hr {
     border-radius: 0.5vw;
 }
 
-/* Formulaire participants */
+/*-----------------------------------
+        FORMULAIRE PARTICIPANTS
+------------------------------------*/
 
 .ensembleForm {
     display: flex;
@@ -635,6 +632,7 @@ hr {
     margin-inline: 2vw;
     width: 20vw;
 }
+
 
 /*----------------------------
 POO - Parcours 
@@ -726,7 +724,70 @@ POO - Parcours
     text-align: center;
 }
 
-/* PAGE ADMIN */
+/*-----------------------------------
+             PAGE COMPTE
+------------------------------------*/
+
+.ensembleCompte {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-inline: auto;
+    width: 40vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    border-radius: 3vw;
+}
+
+.ensembleCompte input[type=submit] {
+    align-items: center;
+}
+
+strong {
+    font-family: lufgablack;
+}
+
+.grpReservation {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.ensembleReservation {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2vw 3vw 2vw 3vw;
+    border-radius: 1vw
+}
+
+.ensembleReservation form {
+    display: flex;
+}
+
+.ensembleReservation input[type=submit] {
+    margin-top: 3vw;
+    width: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reservation-card {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.reservation {
+    margin-inline: 6vw;
+}
+
+/*-----------------------------------
+             PAGE ADMIN
+------------------------------------*/
+
 .tablinks {
     cursor: pointer;
 }
@@ -755,8 +816,6 @@ POO - Parcours
     transition-duration: .2s;
 }
 
-
-/* Style de la page Admin */
 h1#h1Admin {
     margin-top: -9vw;
 }
@@ -956,7 +1015,7 @@ div[id^='formModif_'] {
 
 
 /*-------------------
-        footer 
+        FOOTER 
 --------------------*/
 
 footer {
@@ -1022,18 +1081,6 @@ footer {
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* Sidenav menu */
 .sidenav {
     height: 100%;
@@ -1067,12 +1114,10 @@ footer {
     margin: 0;
 }
 
-/* Active class */
 .sidenav.active {
     left: 0;
 }
 
-/* Close btn */
 .sidenav .close {
     position: absolute;
     top: 0;
