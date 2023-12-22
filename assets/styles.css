@@ -459,7 +459,7 @@ header {
         font-size: 11px;
     }
 
-    @media (max-width: 670px) {
+    
 
         .image-container {
             flex-direction: column;
@@ -473,19 +473,6 @@ header {
         }
     }
 
-    @media (max-width: 963px) {
-
-        .ellipse1 {
-            display: none;
-            visibility: hidden;
-        }
-
-        .ellipse2 {
-            display: none;
-            visibility: hidden;
-        }
-    }
-}
 
 /*-------------------------------
                 FAQ
