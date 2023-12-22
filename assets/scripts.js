@@ -9,7 +9,7 @@ function scrollFleche() {
 }
 flecheBas.addEventListener('click', scrollFleche);
 
-
+// Fonction pour ouvrir un onglet de contenu
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -24,6 +24,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+// Fonction pour afficher ou masquer le formulaire de modification d'utilisateur
 function afficherFormulaireModification(idUtilisateur) {
     var form = document.getElementById('formModif_' + idUtilisateur);
 
@@ -37,6 +38,7 @@ function afficherFormulaireModification(idUtilisateur) {
     }
 }
 
+// Fonction pour modifier un utilisateur
 function modifierUtilisateur(event, idUtilisateur) {
     event.preventDefault(); // Empêcher le formulaire de se soumettre normalement
 
@@ -62,8 +64,7 @@ function modifierUtilisateur(event, idUtilisateur) {
     xhr.send(formData);
 }
 
-//fonction pour masque l'img de fond de login
-
+// Fonction pour gérer l'affichage de l'image de fond en fonction de la taille de la fenêtre
 document.addEventListener("DOMContentLoaded", function () {
     const imageContainer = document.querySelector('.pageLogin > div'); // Conteneur de l'image
     let imageExists = true; // Flag pour vérifier si l'image existe dans le DOM
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', updateImageInDOM);
 });
 
-
+// Fonction pour supprimer un utilisateur
 function supprimerUtilisateur(idUtilisateur) {
     if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
         var xhr = new XMLHttpRequest();
@@ -106,6 +107,7 @@ function supprimerUtilisateur(idUtilisateur) {
     }
 }
 
+// Fonction pour créer un nouvel utilisateur
 function creerUtilisateur(event) {
     event.preventDefault();
     var form = document.getElementById('formCreerUtilisateur');
@@ -122,6 +124,7 @@ function creerUtilisateur(event) {
     xhr.send(formData);
 }
 
+// Fonction pour modifier un parcours
 function modifierParcours(event, idParcours) {
     event.preventDefault(); // Empêcher la soumission standard du formulaire
 
@@ -139,6 +142,7 @@ function modifierParcours(event, idParcours) {
     xhr.send(formData);
 }
 
+// Fonction pour supprimer un parcours
 function supprimerParcours(idParcours) {
     if (confirm("Êtes-vous sûr de vouloir supprimer ce parcours ?")) {
         var xhr = new XMLHttpRequest();
@@ -153,6 +157,8 @@ function supprimerParcours(idParcours) {
         xhr.send("idParcours=" + idParcours);
     }
 }
+
+// Fonction pour créer un nouveau parcours
 function creerParcours(event) {
     event.preventDefault();
     var form = document.getElementById('formCreerParcours');
@@ -168,10 +174,14 @@ function creerParcours(event) {
     }
     xhr.send(formData);
 }
+
+// Fonction pour afficher ou masquer le formulaire de modification de participant
 function afficherFormulaireModificationParticipant(idParticipant) {
     var form = document.getElementById('formModifContainerParticipant_' + idParticipant);
     form.style.display = form.style.display === 'block' ? 'none' : 'block';
 }
+
+// Fonction pour modifier un participant
 function modifierParticipant(event, idParticipant) {
     event.preventDefault(); // Empêcher la soumission standard du formulaire
 
@@ -192,6 +202,8 @@ function modifierParticipant(event, idParticipant) {
     };
     xhr.send(formData);
 }
+
+// Fonction pour supprimer un participant
 function supprimerParticipant(idParticipant) {
     if (confirm("Êtes-vous sûr de vouloir supprimer ce participant ?")) {
         var xhr = new XMLHttpRequest();
@@ -207,6 +219,7 @@ function supprimerParticipant(idParticipant) {
     }
 }
 
+// Fonction pour créer un nouveau participant
 function creerParticipant(event) {
     event.preventDefault(); // Empêcher le formulaire de se soumettre normalement
 
@@ -223,6 +236,8 @@ function creerParticipant(event) {
     };
     xhr.send(formData);
 }
+
+// Fonction pour supprimer un message de chat
 function supprimerMessageChat(idChat) {
     if (confirm("Êtes-vous sûr de vouloir supprimer ce message de chat ?")) {
         // Créez un objet XMLHttpRequest
@@ -250,16 +265,11 @@ function supprimerMessageChat(idChat) {
     }
 }
 
-//fonction menu burger
-
+// Fonction pour gérer le menu burger
 document.addEventListener('DOMContentLoaded', function () {
     var sidenav = document.getElementById("mySidenav");
     var openBtn = document.getElementById("openBtn");
     var closeBtn = document.getElementById("closeBtn");
-
-    // var sidenav = document.querySelector("sidenav");
-    // var openBtn = document.querySelector("open");
-    // var closeBtn = document.querySelector("close");
 
     openBtn.addEventListener('click', function (event) {
         event.preventDefault();
@@ -279,4 +289,3 @@ document.addEventListener('DOMContentLoaded', function () {
         sidenav.classList.remove("active");
     }
 });
-

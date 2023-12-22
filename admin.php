@@ -224,13 +224,13 @@
                             <input type='number' name='ageParticipant' value='" . htmlspecialchars($row["ageParticipant"]) . "'>
                             <input type='email' name='mailParticipant' value='" . htmlspecialchars($row["mailParticipant"]) . "'>
                             <select name='parcoursParticipant'>";
-                            $parcoursSql = "SELECT id, nom FROM trail";
-                            $parcoursResult = $bdd->query($parcoursSql);
-                            while ($parcoursRow = $parcoursResult->fetch()) {
-                                // La ligne suivante a été corrigée pour utiliser 'id' au lieu de 'trailNom' pour la comparaison
-                                $selected = ($parcoursRow['idTrail'] == $row['trailNom']) ? ' selected' : '';
-                                echo "<option value='" . htmlspecialchars($parcoursRow['id']) . "'$selected>" . htmlspecialchars($parcoursRow['nom']) . "</option>";
-                            }
+                $parcoursSql = "SELECT id, nom FROM trail";
+                $parcoursResult = $bdd->query($parcoursSql);
+                while ($parcoursRow = $parcoursResult->fetch()) {
+                    // La ligne suivante a été corrigée pour utiliser 'id' au lieu de 'trailNom' pour la comparaison
+                    $selected = ($parcoursRow['idTrail'] == $row['trailNom']) ? ' selected' : '';
+                    echo "<option value='" . htmlspecialchars($parcoursRow['id']) . "'$selected>" . htmlspecialchars($parcoursRow['nom']) . "</option>";
+                }
                 echo "</select>
                             <input type='submit' value='Enregistrer les modifications'>
                         </form>

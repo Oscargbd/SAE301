@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:8889
--- Généré le : mar. 19 déc. 2023 à 15:14
--- Version du serveur : 5.7.34
--- Version de PHP : 8.0.8
+-- Hôte : 127.0.0.1
+-- Généré le : ven. 22 déc. 2023 à 14:49
+-- Version du serveur : 10.4.32-MariaDB
+-- Version de PHP : 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,22 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `chat` (
   `idChat` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `message` text,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `chat`
---
-
-INSERT INTO `chat` (`idChat`, `user_id`, `message`, `timestamp`) VALUES
-(11, 10, 'Bonjour j\'ai une question', '2023-12-17 11:47:16'),
-(12, 10, 'Oui dites nous', '2023-12-17 11:47:30'),
-(13, 10, 'Salut ! Ca va nickel et toi ?', '2023-12-17 11:51:25'),
-(14, 11, 'Hello !', '2023-12-18 09:36:21'),
-(15, 10, 'wesh oscar', '2023-12-18 09:36:55'),
-(16, 10, 'Bonjour !', '2023-12-18 09:45:37'),
-(17, 10, 'hhh', '2023-12-18 09:49:39');
+  `message` text DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -58,19 +45,18 @@ CREATE TABLE `parcours` (
   `trail_id` int(11) DEFAULT NULL,
   `cheminImage` varchar(255) DEFAULT NULL,
   `distance` varchar(200) DEFAULT NULL,
-  `denivele` varchar(200) DEFAULT NULL,
   `idParticipant` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `parcours`
 --
 
-INSERT INTO `parcours` (`id`, `trail_id`, `cheminImage`, `distance`, `denivele`, `idParticipant`) VALUES
-(1, 1, 'img/trail.jpg', '5', NULL, NULL),
-(2, 2, 'img/trail2.jpg', '10', NULL, NULL),
-(3, 3, 'img/trail3.jpg', '15', NULL, NULL),
-(4, 4, 'img/trail4.jpg', '20', NULL, NULL);
+INSERT INTO `parcours` (`id`, `trail_id`, `cheminImage`, `distance`, `idParticipant`) VALUES
+(1, 1, 'img/trail.jpg', '5', NULL),
+(2, 2, 'img/trail2.jpg', '10', NULL),
+(3, 3, 'img/trail3.jpg', '15', NULL),
+(4, 4, 'img/trail4.jpg', '20', NULL);
 
 -- --------------------------------------------------------
 
@@ -84,21 +70,9 @@ CREATE TABLE `participant` (
   `prenomParticipant` varchar(200) NOT NULL,
   `ageParticipant` int(200) NOT NULL,
   `idUtilisateur` int(200) NOT NULL,
-  `mailParticipant` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `photo`
---
-
-CREATE TABLE `photo` (
-  `idPhoto` int(200) NOT NULL,
-  `url` varchar(500) NOT NULL,
-  `alt` varchar(200) NOT NULL,
-  `idUtilisateur` int(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `mailParticipant` varchar(200) NOT NULL,
+  `idTrail` int(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -110,7 +84,7 @@ CREATE TABLE `referent` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) DEFAULT NULL,
   `contact` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `referent`
@@ -132,18 +106,19 @@ CREATE TABLE `trail` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) DEFAULT NULL,
   `distance` int(11) DEFAULT NULL,
-  `heureDepart` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `heureDepart` varchar(50) DEFAULT NULL,
+  `referent_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `trail`
 --
 
-INSERT INTO `trail` (`id`, `nom`, `distance`, `heureDepart`) VALUES
-(1, 'Marche Polaire', 5, '17:00'),
-(2, 'Trail des Husky', 10, '18:00'),
-(3, 'Trail des alpinistes', 15, '18:30'),
-(4, 'Trail des loups', 20, '19:00');
+INSERT INTO `trail` (`id`, `nom`, `distance`, `heureDepart`, `referent_id`) VALUES
+(1, 'Marche Polaire', 5, '17:00', 1),
+(2, 'Trail des Huskies', 10, '18:00', 2),
+(3, 'Trail des alpinistes', 15, '18:30', 3),
+(4, 'Trail des loups', 20, '19:00', 4);
 
 -- --------------------------------------------------------
 
@@ -160,15 +135,14 @@ CREATE TABLE `utilisateur` (
   `prenomUtilisateur` varchar(200) NOT NULL,
   `ageUtilisateur` int(200) NOT NULL,
   `role` varchar(255) NOT NULL DEFAULT 'user'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`idUtilisateur`, `username`, `email`, `password`, `nomUtilisateur`, `prenomUtilisateur`, `ageUtilisateur`, `role`) VALUES
-(10, 'admin', 'admin@admin.com', '$2y$10$iWDQO/TiJNFa5YXhJJuzO..a1ii25xOc0bus8mBlYTnwnEBaX8Gpy', 'admin', 'admin', 19, 'user'),
-(11, 'lilrom1__', 'romain.montes55@gmail.com', '$2y$10$Lx7ptevTU65dbduZ1SuHAOewpqP5zUvtl8LKuaCUYUIoiydIB0rXy', 'Montes', 'Romain', 19, 'admin');
+(10, 'admin', 'admin@admin.com', '$2y$10$iWDQO/TiJNFa5YXhJJuzO..a1ii25xOc0bus8mBlYTnwnEBaX8Gpy', 'admin', 'admin', 24, 'admin');
 
 --
 -- Index pour les tables déchargées
@@ -194,14 +168,8 @@ ALTER TABLE `parcours`
 --
 ALTER TABLE `participant`
   ADD PRIMARY KEY (`idParticipant`),
-  ADD KEY `idUtilisateur` (`idUtilisateur`);
-
---
--- Index pour la table `photo`
---
-ALTER TABLE `photo`
-  ADD PRIMARY KEY (`idPhoto`),
-  ADD KEY `idUtilisateur` (`idUtilisateur`);
+  ADD KEY `idUtilisateur` (`idUtilisateur`),
+  ADD KEY `idTrail` (`idTrail`);
 
 --
 -- Index pour la table `referent`
@@ -213,7 +181,8 @@ ALTER TABLE `referent`
 -- Index pour la table `trail`
 --
 ALTER TABLE `trail`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `referent_id` (`referent_id`);
 
 --
 -- Index pour la table `utilisateur`
@@ -229,7 +198,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `idChat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idChat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT pour la table `parcours`
@@ -241,31 +210,25 @@ ALTER TABLE `parcours`
 -- AUTO_INCREMENT pour la table `participant`
 --
 ALTER TABLE `participant`
-  MODIFY `idParticipant` int(200) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `photo`
---
-ALTER TABLE `photo`
-  MODIFY `idPhoto` int(200) NOT NULL AUTO_INCREMENT;
+  MODIFY `idParticipant` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `referent`
 --
 ALTER TABLE `referent`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `trail`
 --
 ALTER TABLE `trail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `idUtilisateur` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idUtilisateur` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Contraintes pour les tables déchargées
@@ -291,10 +254,10 @@ ALTER TABLE `participant`
   ADD CONSTRAINT `participant_ibfk_1` FOREIGN KEY (`idUtilisateur`) REFERENCES `utilisateur` (`idUtilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `photo`
+-- Contraintes pour la table `trail`
 --
-ALTER TABLE `photo`
-  ADD CONSTRAINT `photo_ibfk_1` FOREIGN KEY (`idUtilisateur`) REFERENCES `utilisateur` (`idUtilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `trail`
+  ADD CONSTRAINT `trail_ibfk_1` FOREIGN KEY (`referent_id`) REFERENCES `referent` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

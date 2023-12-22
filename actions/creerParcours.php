@@ -16,3 +16,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Afficher un message de succès si l'insertion a réussi
     echo "Parcours créé avec succès.";
 }
+?>

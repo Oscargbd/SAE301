@@ -63,3 +63,4 @@ if (
     header('Location: ../signup.php');
     exit;
 }
+?>

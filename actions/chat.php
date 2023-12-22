@@ -52,3 +52,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $stmt = $bdd->prepare("INSERT INTO chat (user_id, message) VALUES (?, ?)");
     $stmt->execute([$user_id, $message]);
 }
+?>
