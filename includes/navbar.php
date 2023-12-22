@@ -5,7 +5,7 @@ session_start();
 // Connexion à la base de données
 require('includes/database.php');
 ?>
-<nav class="nav-all nav-login" id="contenaire_lapotop_navbar">
+<nav class="nav-all" id="contenaire_lapotop_navbar">
   <a href="index.php" class="iconeRond">
     <img src="./images/logoblanc.png" alt="LogoTrailDesGlaces">
   </a>

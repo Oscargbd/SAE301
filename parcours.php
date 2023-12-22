@@ -26,7 +26,7 @@ $trails = $trailManager->getTrails();
 
 <body>
 
-    <?php
+<?php
     include('includes/navbar-index.php');
     ?>
 
