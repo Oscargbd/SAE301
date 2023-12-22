@@ -20,7 +20,36 @@ strong {
     font-family: lufgablack;
 }
 
+.grpReservation {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 .ensembleReservation {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2vw 3vw 2vw 3vw;
+    border-radius: 1vw
+}
+
+.ensembleReservation form {
+    display: flex;
+}
+
+.ensembleReservation input[type=submit] {
+    margin-top: 3vw;
+    width: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reservation-card {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.reservation {
     margin-inline: 6vw;
 }
