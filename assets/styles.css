@@ -42,6 +42,12 @@ body {
     z-index: 2;
 }
 
+.nav-login {
+    background: linear-gradient(rgba(0, 0, 0, 0.572), rgba(255, 255, 255, 0));
+}
+
+
+
 nav img {
     width: 3vw;
     padding-inline: 0.2vw;
@@ -375,23 +381,7 @@ header {
     text-align: center;
 }
 
-.ellipse1 {
-    right: -2vw;
-    position: absolute;
-    width: 170px;
-    float: right;
-    margin-left: auto;
-    margin-top: 20px;
-}
 
-.ellipse2 {
-    left: -2vw;
-    position: absolute;
-    width: 170px;
-    float: left;
-    margin-right: auto;
-    margin-top: 10vw;
-}
 
 .conteneur-cartes {
     display: flex;
@@ -469,7 +459,7 @@ header {
         font-size: 11px;
     }
 
-    @media (max-width: 670px) {
+    
 
         .image-container {
             flex-direction: column;
@@ -483,19 +473,6 @@ header {
         }
     }
 
-    @media (max-width: 963px) {
-
-        .ellipse1 {
-            display: none;
-            visibility: hidden;
-        }
-
-        .ellipse2 {
-            display: none;
-            visibility: hidden;
-        }
-    }
-}
 
 /*-------------------------------
                 FAQ
@@ -694,7 +671,7 @@ POO - Parcours
 }
 
 .txt-poo-2 {
-    font-size: 1.7vw;
+    font-size: 1.1vw;
 }
 
 .h3-poo {
