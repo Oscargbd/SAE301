@@ -37,8 +37,8 @@ body {
     position: absolute;
     top: 0;
     background-color: none;
-    padding: 2vw 2vw 1vw 1vw;
-    width: 98%;
+    padding: 2vw 0vw 2vw 0.7vw;
+    width: 97%;
     z-index: 2;
 }
 
@@ -975,11 +975,11 @@ footer {
     color: white;
     width: 98%;
     height: auto;
-    display: block;
     border-radius: 20px;
     margin: 0 auto;
     text-align: center;
     padding-bottom: 3px;
+    margin-bottom: 1vw;
 }
 
 .logofooter {
@@ -989,20 +989,36 @@ footer {
 }
 
 .rec-reseau {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 98%;
     margin: 0 auto;
     border-radius: 20px;
-    margin-right: 10px;
-    margin: 10px;
     background-color: white;
     color: black;
-
+    margin-bottom: 0.6vw;
 }
+
+@media screen and (max-width: 670px) {
+    .regroupement-reseau {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reseau {
+        margin-top: -4vw;
+    }
+
+    .down {
+        margin-top: -10vw;
+    }
+}
+
 
 .reseau {
     text-decoration: none;
     color: #000;
-    margin: -22px;
 }
 
 .separateur-footer {

@@ -25,27 +25,27 @@
                 </div>
                 <img id="flecheBas" src="img/fleche.svg">
             </div>
-            
+
         </div>
 
-        <img class="ellipse1" src="./img/Ellipse 1.png" alt="">
+        <!-- <img class="ellipse1" src="./img/Ellipse 1.png" alt=""> -->
 
         <div class="div-explication">
             <h2>Le trail des glaces, c'est quoi ?</h2>
-            <div class="texteIndex" >
-                <p >Le Trail des Glaces organisé par l'association imaginaire Le Club Alpin Horizon Vertical s'annonce comme une aventure immersive au cœur des paysages des Estables en Haute-Loire, programmée pour le 14 décembre 2024. Cet événement propose une gamme variée de parcours, adaptés à tous les niveaux d'enthousiastes de plein air. Des 20 kilomètres exigeants du Trail des Loups à l'intrigant Trail des Alpinistes de 15 kilomètres, comprenant une portion d'escalade unique, jusqu'au parcours plus accessible du Trail des Husky sur 10 kilomètres, chaque participant trouvera un défi à sa mesure.</p>
+            <div class="texteIndex">
+                <p>Le Trail des Glaces organisé par l'association imaginaire Le Club Alpin Horizon Vertical s'annonce comme une aventure immersive au cœur des paysages des Estables en Haute-Loire, programmée pour le 14 décembre 2024. Cet événement propose une gamme variée de parcours, adaptés à tous les niveaux d'enthousiastes de plein air. Des 20 kilomètres exigeants du Trail des Loups à l'intrigant Trail des Alpinistes de 15 kilomètres, comprenant une portion d'escalade unique, jusqu'au parcours plus accessible du Trail des Husky sur 10 kilomètres, chaque participant trouvera un défi à sa mesure.</p>
                 <p>Pour ceux privilégiant une approche plus décontractée, la Marche Polaire de 5 kilomètres offre une alternative non compétitive. Des ravitaillements stratégiquement situés et des goodies exclusifs contribueront à l'expérience des participants, créant des souvenirs mémorables de cette journée. L'événement sera animé par une atmosphère festive, de la musique et des animations.</p>
             </div>
-            
-            
-            
-            
+
+
+
+
             <div class="bouton-container">
                 <a href="parcours.php"><button class="bouton-info">En savoir plus</button></a>
             </div>
 
         </div>
-<img class="ellipse2" src="./img/Ellipse 2.png" alt="">
+        <img class="ellipse2" src="./img/Ellipse 2.png" alt="">
 
 
         <div class="separateur"></div>
@@ -90,13 +90,11 @@
 
         </div>
 
-        <footer>
 
-            <?php
-            // include('includes/footer.php');
-            ?>
+        <?php
+        include('includes/footer.php');
+        ?>
 
-        </footer>
 
     </main>
 </body>
