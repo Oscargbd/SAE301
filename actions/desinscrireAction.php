@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); // Démarrer la session
 
 if (isset($_POST["desinscrire"])) {
     include('../includes/database.php');
