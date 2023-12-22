@@ -45,7 +45,7 @@
             </div>
 
         </div>
-        <img class="ellipse2" src="./img/Ellipse 2.png" alt="">
+        
 
 
         <div class="separateur"></div>

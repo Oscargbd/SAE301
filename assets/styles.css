@@ -381,23 +381,7 @@ header {
     text-align: center;
 }
 
-.ellipse1 {
-    right: -2vw;
-    position: absolute;
-    width: 170px;
-    float: right;
-    margin-left: auto;
-    margin-top: 20px;
-}
 
-.ellipse2 {
-    left: -2vw;
-    position: absolute;
-    width: 170px;
-    float: left;
-    margin-right: auto;
-    margin-top: 10vw;
-}
 
 .conteneur-cartes {
     display: flex;
