@@ -31,13 +31,8 @@
                 ?>
             </div>
         </div>
-    </main>
+    </main>      
 
-    <footer>
-
-            
-
-        </footer>
 </body>
 
 </html>

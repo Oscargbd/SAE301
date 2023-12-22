@@ -74,4 +74,7 @@ $trails = $trailManager->getTrails();
 <?php endforeach; ?>
         </div>
     </main>
+    <?php
+        include('includes/footer.php');
+        ?>
 </body>
