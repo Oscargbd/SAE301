@@ -19,13 +19,15 @@ $trails = $trailManager->getTrails();
     <?php
     include('includes/head.php');
     ?>
+        <script src="assets/scripts.js"></script>
+
     <title>Le Trail des Glaces</title>
 </head>
 
 <body>
 
     <?php
-    include('includes/navbar.php');
+    include('includes/navbar-index.php');
     ?>
 
     <main>

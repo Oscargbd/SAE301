@@ -37,15 +37,15 @@ require('includes/database.php');
       echo "<li><a href='login.php'>Se connecter</a></li>";
     } ?>
   </ul>
-  </div>
-
-
-  <a href="#" id="openBtn">
-    <span class="burger-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
 </div>
+
+
+<a href="#" id="openBtn" class="open">
+  <span class="burger-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+  </div>
 
 </a>
