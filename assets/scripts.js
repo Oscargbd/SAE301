@@ -200,6 +200,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var openBtn = document.getElementById("openBtn");
     var closeBtn = document.getElementById("closeBtn");
 
+    // var sidenav = document.querySelector("sidenav");
+    // var openBtn = document.querySelector("open");
+    // var closeBtn = document.querySelector("close");
+
     openBtn.addEventListener('click', function (event) {
         event.preventDefault();
         openNav();

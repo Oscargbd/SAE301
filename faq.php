@@ -79,15 +79,9 @@
             setInterval(loadMessages, 5000); // Rafraîchir toutes les 5 secondes
         });
     </script>
-
-    <footer>
-
         <?php
         include('includes/footer.php');
         ?>
-
-    </footer>
-
 </body>
 
 </html>

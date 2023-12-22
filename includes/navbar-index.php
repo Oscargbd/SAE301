@@ -2,6 +2,7 @@
 
 // Démarre la session
 session_start();
+// fjhffbhg
 // Connexion à la base de données
 require('includes/database.php');
 ?>
@@ -27,7 +28,7 @@ require('includes/database.php');
   <ul>
     <li><a href="index.php">Accueil</a></li>
     <li><a href="parcours.php">Parcours</a></li>
-    <li><a href="faq.php">Discussion</a></li>
+    <li><a href="faq.php">Discours</a></li>
     <li><a href="#">Contact</a></li>
     <?php if (isset($_SESSION["username"])) {     // Si l'utilisateur est connecté, il a accès à son compte, sinon il y a un bouton d'inscription
       echo "<li><a href='compte.php'>" . $_SESSION['username'] . "</a></li>";
