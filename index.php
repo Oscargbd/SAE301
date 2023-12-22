@@ -28,8 +28,6 @@
 
         </div>
 
-        <!-- <img class="ellipse1" src="./img/Ellipse 1.png" alt=""> -->
-
         <div class="div-explication">
             <h2>Le trail des glaces, c'est quoi ?</h2>
             <div class="texteIndex">
@@ -45,7 +43,7 @@
             </div>
 
         </div>
-        
+
 
 
         <div class="separateur"></div>
